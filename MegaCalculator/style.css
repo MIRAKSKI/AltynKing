@@ -161,7 +161,7 @@ body {
   width: 66%;margin: 0 10px 0 0;position: relative;padding: 0 0 0 4%;
 }
 .show-content-2-last-child {
-  width: 30%;height: 23rem;margin: 0 0 0 10px;position: sticky;
+  width: 30%;height: 23rem;margin: 0 0 0 10px;position: sticky;top: 0;
 }
 
 .con-show-content-2 {
