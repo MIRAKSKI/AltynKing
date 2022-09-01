@@ -182,7 +182,7 @@ body {
 }
 .show-p1 .imgpreshow {
   width: 100%; height: 100%;align-items: center;align-content: center;
-  transition: transform .2s;box-shadow:inset 0px -90px 70px -50px;cursor: pointer;
+  transition: transform .2s;box-shadow:inset 0px -90px 70px -50px #000;cursor: pointer;
 }
 .show-p1 .imgpreshow:hover {
   transform: scale(1.25);
@@ -201,7 +201,7 @@ body {
 }
 .show-p2 .imgpreshow {
   width: 100%; height: 100%;align-items: center;align-content: center;
-  transition: transform .2s;box-shadow:inset 0px -80px 70px -50px;cursor: pointer;
+  transition: transform .2s;box-shadow:inset 0px -80px 70px -50px #000;cursor: pointer;
 }
 .show-p2 .imgpreshow:hover {
   transform: scale(1.25);
@@ -216,7 +216,7 @@ body {
 }
 .show-p3 .imgpreshow {
   width: 100%; height: 100%;align-items: center;align-content: center;
-  transition: transform .2s;box-shadow:inset 0px -80px 70px -50px;cursor: pointer;
+  transition: transform .2s;box-shadow:inset 0px -80px 70px -50px #000;cursor: pointer;
 }
 .show-p3 .imgpreshow:hover {
   transform: scale(1.25);
