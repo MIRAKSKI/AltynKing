@@ -1,0 +1,246 @@
+.hoster {
+  width: auto;
+  height: 100%;
+}
+.header {
+  width: auto;
+  height: 75px;
+  padding: 0px 0px;
+  border-bottom: 1px solid #808080;
+}
+.hostframe {
+  z-index: 2;
+  border: none;
+  width: 100%;
+  min-height: 87%;
+  height: auto;
+  position: relative;
+  background: rgba(255, 255, 255,0.09);
+  backdrop-filter: blur(15px);
+  border-radius: 5px;
+  margin: 5px 0px 0px 0px;
+}
+.menu {
+  background: transparent;
+  top: 90px;
+  position: absolute;
+  z-index: 4;
+  width: auto;
+  height: auto;
+  max-height: 90%;
+}
+.sidepl {
+  position:relative;
+  width: 580px;
+  min-height: 1000px;
+  height: auto;
+  background: rgba(255,255,255, 0.7);
+  animation-name: grow;
+  animation-duration: 0.3s;
+}
+@keyframes grow {
+  0% {width: 0px}
+  100% {width: 580px}
+}
+.buttholder {
+  position: relative;
+  display: inline-block;
+  left: 9px;
+}
+.trbutt {
+  width: 70px;
+  height: 70px;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 50%;
+  font-size: 55px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 5px 0px 5px ;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+.trbutt:hover {
+  border: 1px solid red;
+  color:red;
+}
+.trbutt:disabled {
+  border: 1px solid darkgray;
+  color:darkgray;
+  background-color: white;
+  cursor: not-allowed;
+}
+.trbutt:disabled:hover {
+  border: 1px solid darkgray;
+  color:darkgray;
+  background-color: white;
+}
+.menbutt {
+  position: relative;
+  background: transparent;
+  border: none;
+  font-size: 66px;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 12px 0px 12px ;
+  cursor: pointer;
+}
+.menbutt:hover {
+  color: red;
+}
+#search {
+  width: 28%;
+  height: 55px;
+  margin: 7px 7px;
+  padding: 2px 8px ;
+  border: 1px solid #808080;
+  border-radius: 5px;
+  position: fixed;
+  left: 35.5%;
+  font-size: 26px;
+}
+body {
+  background-image: url("img/lee.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.bot3 {
+  width: 100%;
+  height: 86px;
+  font-size: 46px;
+  border: 0.5px solid #808080;
+  border-radius: 0px;
+  background: white;
+  cursor: pointer;
+}
+.bot3:hover {
+  background: red;
+  color: white;
+  border: 0.5px solid #FFF;
+  border-radius: 0px;
+}
+.annholder {
+  height: 80px;
+  width: 579px;
+  animation-name: hiopen;
+  animation-duration: 0.2s;
+  border: none;
+}
+@keyframes hiopen {
+  0% {height: 0px;}
+  100% {height: 80px;}
+}
+.semester {
+  width: 289px;
+  height: 100%;
+  border: 0.5px solid gray;
+  font-size: 42px;
+  cursor: pointer;
+}
+.semester:hover {
+  color: white;
+  background: red;
+}
+.semester:disabled {
+  color: white;
+  background: green;
+  border-left: 0.5px solid gray;
+  border-right: 0.5px solid gray;
+  border-top: 0.5px solid gray;
+  border-bottom: none;
+}
+.semester:disabled:hover {
+  color: white;
+  background: green;
+  border-left: 0.5px solid gray;
+  border-right: 0.5px solid gray;
+  border-top: 0.5px solid gray;
+  border-bottom: none;
+}
+.semholder
+.spcopr {
+  width: 579px;
+  height: 70px;
+  color: white;
+  background: green;
+  border: none;
+  font-size: 38px;
+  cursor: pointer;
+}
+.spcopr:hover {
+  color: black;
+  background: green;
+  background: rgba(255, 255, 255, 0.3);
+  border: 0.1px solid gray;
+}
+.mospc {
+  width: 100%;
+  min-height: auto;
+  border: none;
+}
+.trimestre {
+  width: 580px;
+  height: 100%;
+  border: 0.5px solid gray;
+  font-size: 42px;
+  cursor: pointer;
+}
+.trimestre:hover {
+  color: white;
+  background: red;
+}
+.trimestre3 {
+  width: 580px;
+  height: 100%;
+  color: white;
+  background: green;
+  font-size: 42px;
+  border-left: 0.5px solid gray;
+  border-right: 0.5px solid gray;
+  border-top: 0.5px solid gray;
+  border-bottom: none;
+  cursor: pointer;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;;
+}
+.social {
+  height: 60.1px;
+  width: auto;
+  margin: 4.95px;
+  position: absolute;
+  right: 3%;
+}
+p {
+  font-size: 39.9px;
+  color: white;
+}
+.watchholder {
+  position: absolute;
+  top: -17px;
+  left: 10%;
+  height: 58px;
+  padding: 0px;
+  margin: 0px;
+}
+img {
+  border-radius: 50%;
+  border: none;
+  background: none;
+  background: rgba(0, 255, 255, 0.15);
+}
+img:hover {
+  box-shadow: 0px 0px 5px 5px #FFF;
+  background: white;
+}
