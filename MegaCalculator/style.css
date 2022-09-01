@@ -2,11 +2,11 @@ body {
   margin: 0px;
 }
 .QR-Code {
-  width: 100%;height: 23rem;
+  width: 100%;height: 25rem;display: block;position: relative;overflow: hidden;
 }
 .QR-Code img {
-  width: 70%;height: 70%;position: absolute;top: 50%;left: 50%;
-  transform: translate(-50%, -50%);
+  width: 70%;position: absolute;top: 50%;left: 50%;
+  transform: translate(-50%, -50%);display: block;
 }
 .head {
   width: 80%;height: 10.5rem;position: relative;margin: 0px auto 0px auto;
@@ -155,7 +155,7 @@ body {
 }
 
 .show-content-2 {
-  width: 100%;;margin: 10px auto 10px auto;position: relative;display: flex;
+  width: 100%;margin: 10px auto 10px auto;position: relative;display: flex;
 }
 .show-content-2-first-child {
   width: 66%;margin: 0 10px 0 0;position: relative;padding: 0 0 0 4%;
