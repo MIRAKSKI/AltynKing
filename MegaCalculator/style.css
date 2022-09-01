@@ -1,6 +1,13 @@
 body {
   margin: 0px;
 }
+.QR-Code {
+  width: 100%;height: 23rem;
+}
+.QR-Code img {
+  width: 70%;height: 70%;position: absolute;top: 50%;left: 50%;
+  transform: translate(-50%, -50%);
+}
 .head {
   width: 80%;height: 10.5rem;position: relative;margin: 0px auto 0px auto;
 }
