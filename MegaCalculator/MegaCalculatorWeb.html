@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style>
+    body {
+      margin: 0px;padding: 0px;vertical-align: middle;align-items: center;
+      width: 100%;height: 100%;overflow: hidden;
+      position: relative;
+    }
+    .holder {
+      position: relative;
+      align-content: space-around;
+      width: 100%;
+      height: 90%;
+      display:flex;
+      margin: 1% 0 1% 0;
+    }
+    #shm1 {
+      animation-name: opendown;animation-duration: 0.3s;
+    }
+    #shm2 {
+      animation-name: opendown;animation-duration: 0.3s;
+    }
+    @keyframes opendown {
+      0% {height: 0px;}
+      100% {height: 88%;}
+    }
+    #answer {
+      position: relative;
+      align-content: space-around;
+      width: 100%;
+      height: 17%;
+      display:flex;
+      margin: 2px;
+    }
+    #result {
+      width: 100%;
+      height: 52px;
+      display: block;
+      border: 1px solid black;
+      align-items: center;
+      align-content: center;
+      align-self: auto;color: black;
+      margin: 2px 2px 2px 2px;
+      background-color: white;
+      font-size: 22px;
+      padding: 0px 5px 20px 5px;
+      font-weight: bold;
+      border-radius: 5px;overflow: hidden;
+      overflow: hidden;overflow-x: scroll;
+    }
+    #calcu {
+      border: none;
+      width: 98%;padding: 0px;margin: 0px;
+      height: 100%;border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.09);
+      backdrop-filter:blur(15px);
+      margin-left: auto;margin-right: auto;
+    }
+    .keyholder {
+      width: 100%;
+      height: 100%;
+      display: grid;
+    }
+    .add2 {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        align-content: center;
+        align-self: auto;
+        background-color: green;
+        margin: 2px;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        display: inline;
+    }
+    .add2:active {
+        background-color: rgba(0,255,0,1);
+        color: black;
+        cursor: pointer;
+    }
+    #secsol {
+      position: absolute;
+      background: transparent;top: 52%;left: 8px;
+      border: none;height: 48%;width: 85%;overflow: hidden;
+      margin: 0px;padding: 0px 5px;overflow: hidden;
+      z-index: 4;color: rgba(100, 100, 100, 1);
+    }
+    .add1 {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        align-content: center;
+        align-self: auto;
+        background-color: rgba(100,100,100,1);
+        margin: 2px;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        display: inline;animation-name: openleft;animation-duration: 0.3s;
+    }
+    .add1:active {
+        background-color: rgba(100,100,100,0.7);
+        color: white;
+        cursor: pointer;
+    }
+    .add11 {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        align-content: center;
+        align-self: auto;vertical-align: middle;
+        background-color: rgba(100,100,100,1);
+        margin: 2px;
+        color: white;
+        font-size: 22px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        display: block;
+    }
+    .add11:active {
+        background-color: rgba(100,100,100,0.7);
+        color: white;
+        cursor: pointer;
+    }
+    @keyframes openleft {
+      0% {width: 0px;}
+      100% {width: 100%;}
+    }
+    .fx {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      align-content: center;
+      align-self: auto;
+      background-color: green;
+      margin: 2px;
+      color: rgba(255,200,0,1);
+      font-size: 22px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      display: inline;
+    }
+    .fx:active {
+        background-color: rgba(0,200,0,0.7);
+        color: white;
+        cursor: pointer;
+    }
+    .deg {
+      position: absolute;right: 19px;bottom: 20%;
+      width: 7px;height: 7px;padding: 0px;
+      margin: 0px;color: black;font-size: 18px;
+    }
+    .answer {
+      position: relative;
+      align-content: space-around;
+      width: 99%; border: 1px solid black;
+      height: 13%;border-radius: 5px;
+      display:flex;
+      margin: 2px;
+    }
+    .calcu {
+      border: none;
+      width: 100%;padding: 0px;margin: 0px;
+      background-color: white;
+      height: 100%;border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.09);
+      backdrop-filter:blur(15px);vertical-align: middle;
+      margin-left: auto;margin-right: auto;margin-top: 0%;
+    }
+    .result {
+      width: 100%;
+      height: 52%;
+      display: inline;border: none;
+      align-items: center;background: transparent;
+      align-content: center;
+      align-self: auto;text-align: center;
+      margin: 6px 0px 2px 0px;
+      font-size: 22px;color: black;
+      padding: 0px 5px 5px 5px;
+      font-weight: bold;
+      border-radius: 5px;overflow: hidden;
+      overflow: hidden;overflow-x: scroll;
+    }
+    .hvnum {
+      width: 100%;
+      height: 37px;
+      display: block;
+      align-items: center;
+      align-content: center;
+      align-self: auto;
+      margin: 6px 0px 2px 0px;
+      background-color: white;
+      font-size: 22px;text-align: center;
+      padding: 0px 5px 5px 5px;
+      font-weight: bold;
+      border-radius: 5px;overflow: hidden;
+      border: 0.5px solid rgba(100, 100, 100, 0.5);
+    }
+    .result12 {
+      width: 100%;
+      height: 37px;
+      display: inline;border: none;
+      align-items: center;background: transparent;
+      align-content: center;
+      align-self: auto;text-align: center;
+      margin: 6px 0px 2px 0px;
+      font-size: 22px;
+      padding: 0px;color: black;
+      font-weight: bold;
+      border-radius: 5px;overflow: hidden;
+      overflow: hidden;overflow-x: scroll;
+    }
+    .result13 {
+      width: 11%;
+      height: 37px;
+      display: inline;border: none;
+      align-items: center;background: transparent;
+      align-content: center;
+      align-self: auto;text-align: center;
+      margin: 6px 2px 2px 2px;
+      font-size: 22px;
+      padding: 0px;color: black;
+      font-weight: bold;
+      border-radius: 5px;overflow: hidden;
+      overflow: hidden;overflow-x: scroll;
+    }
+    .hvnum2 {
+      width: 95.9%;height: 37px;display: block;
+      align-items: center;align-content: center;align-self: auto;
+      margin: 6px 10px 2px 10px;  background-color: white;
+      font-size: 22px;text-align: center;
+      padding: 0px 5px 5px 5px;color: black;
+      font-weight: bold; animation: scroll-left 15s linear infinite;
+      border-radius: 5px;overflow: auto;border: none;
+    }
+    .hvnum3 {
+      width: 1000px;height: 37px;display: block;
+      align-items: center;align-content: center;align-self: auto;
+      margin: 6px 10px 2px 10px;  background-color: white;
+      font-size: 22px;text-align: center;padding: 0px 5px 5px 5px;
+      font-weight: bold;
+      border-radius: 5px;overflow-y: hidden;overflow-x: scroll;
+      border: 0.5px solid rgba(100, 100, 100, 0.5);
+      -moz-transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+      -moz-animation: my-animation 15s linear infinite;
+      -webkit-animation: my-animation 15s linear infinite;
+      animation: my-animation 15s linear infinite;
+    }
+    @-moz-keyframes my-animation {
+      from { -moz-transform: translateX(100%); }
+      to { -moz-transform: translateX(-100%); }
+    }
+    @-webkit-keyframes my-animation {
+      from { -webkit-transform: translateX(100%); }
+      to { -webkit-transform: translateX(-100%); }
+    }
+    @keyframes my-animation {
+      from {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+      }
+      to {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+      }
+    }
+    </style>
+</head>
+<body>
+    <div id="calcu" style="display:block";>
+        <div id="answer">
+            <input type="text" onkeyup="solution()" id="result"disabled>
+            <input type="text" placeholder="answer" id="secsol"disabled>
+            <p class="deg" id="deg">D</p>
+        </div>
+        <div class="keyholder">
+          <div class="holder">
+              <input type="button" class="add1" value="³√𝑋" onclick="solution('^-3^')">
+              <input type="button" class="add1" value="²√𝑋" id="shm3" onclick="solution('sqrt')">
+              <input type="button" class="add1" value="ʸ√𝑋" onclick="dis('^rt^')">
+              <input type="button" class="add1" value="xʸ" onclick="dis('^')">
+              <input type="button" class="add1" value="log" onclick="solution('log')">
+              <input type="button" class="add2" value="c" onclick="clr()">
+              <input type="button" class="add2" value="<<" onclick="backspc()">
+              <input type="button" class="add2" value="%" onclick="dis('%')">
+              <input type="button" class="add2" value="÷" onclick="dis('/')">
+          </div>
+          <div class="holder">
+              <input type="button" class="add1" value="e˟" onclick="solution('exX')">
+              <input type="button" class="add1" value="10˟" onclick="solution('tenX')">
+              <input type="button" id="swm6" class="add11" value="tan-1" ondblclick="degrad()" onclick="solution('tan-1')">
+              <input type="button" id="swm3" class="add11" value="tan" ondblclick="degrad()" onclick="solution('tan')">
+              <input type="button" class="add1" value="X!" id="shm4" onclick="solution('exmk')">
+              <input type="button" class="add2" value="1" onclick="dis('1')">
+              <input type="button" class="add2" value="2" onclick="dis('2')">
+              <input type="button" class="add2" value="3" onclick="dis('3')">
+              <input type="button" class="add2" value="×" onclick="dis('*')">
+          </div>
+          <div class="holder">
+              <input type="button" class="add1" value="|X|" onclick="solution('abs')">
+              <input type="button" class="add1" value="ln" onclick="solution('ln')">
+              <input type="button" id="swm5" class="add11" value="cos-1" ondblclick="degrad()" onclick="solution('cos-1')">
+              <input type="button" id="swm2" class="add11" value="cos" ondblclick="degrad()" onclick="solution('cos')">
+              <input type="button" class="add1" value="¹/ₓ" id="shm5" onclick="solution('rt-1')">
+              <input type="button" class="add2" value="4" onclick="dis('4')">
+              <input type="button" class="add2" value="5" onclick="dis('5')">
+              <input type="button" class="add2" value="6" onclick="dis('6')">
+              <input type="button" class="add2" value="-" onclick="dis('-')">
+          </div>
+          <div class="holder">
+              <input type="button" class="add1" value="(" onclick="dis('(')">
+              <input type="button" class="add1" value=")" onclick="dis(')')">
+              <input type="button" id="swm4" class="add11" value="sin-1" ondblclick="degrad()" onclick="solution('sin-1')">
+              <input type="button" id="swm1" class="add11" value="sin" ondblclick="degrad()" onclick="solution('sin')">
+              <input type="button" class="add1" value="π" id="shm6" onclick="dis('pi')">
+              <input type="button" class="add2" value="7" onclick="dis('7')">
+              <input type="button" class="add2" value="8" onclick="dis('8')">
+              <input type="button" class="add2" value="9" onclick="dis('9')">
+              <input type="button" class="add2" value="+" onclick="dis('+')">
+          </div>
+          <div class="holder">
+              <input type="button" id="dsm25" class="add1" value="M-" onclick="memory('subt')" style="display:none;">
+              <input type="button" id="dsm24" class="add1" value="M+" onclick="memory('plus')" style="display:none;">
+              <input type="button" id="dsm23" class="add1" value="M" ondblclick="memory('MC')" onclick="memory('M')" style="display:none;">
+              <input type="button" id="dsm22" class="add1" value="x²" onclick="solution('square')">
+              <input type="button" id="dsm21" class="add1" value="x³" onclick="solution('cube')">
+              <input type="button" id="dsm20" class="add11" value="Ans" onclick="ans()">
+              <input type="button" id="dsm1" class="add11" value="2nd" onclick="Snd()">
+              <input type="button" class="fx" value="fx()" onclick="fx()">
+              <input type="button" class="add2" value="e" id="shm7" onclick="dis('ex')">
+              <input type="button" class="add2" value="0" onclick="dis('0')">
+              <input type="button" class="add2" value="." onclick="dis('.')">
+              <input type="button" class="add2" value="=" onclick="solution('=');setking();">
+          </div>
+        </div>
+    </div>
+    <div class="calcu" id="functionX" style="display:none;">
+        <div class="answer" id="regulare">
+            <input type="text" id="fx10" value="(" class="result13" disabled>
+            <input type="button" id="fx1" value="" class="hvnum" onclick="activeX('1')">
+            <input type="text" id="fx2" value=")*X⁴+(" class="result" disabled>
+            <input type="button" id="fx3" value="" class="hvnum" onclick="activeX('2')">
+            <input type="text" id="fx4" value=")*X³+(" class="result" disabled>
+            <input type="button" id="fx5" value="" class="hvnum" onclick="activeX('3')">
+            <input type="text" id="fx6" value=")*X²+(" class="result" disabled>
+            <input type="button" id="fx7" value="" class="hvnum" onclick="activeX('4')">
+            <input type="text" id="fx8" value=")*X+(" class="result" disabled>
+            <input type="button" id="fx9" value="" class="hvnum" onclick="activeX('5')">
+            <input type="text" value=") = 0" class="result12" disabled>
+        </div>
+        <div class="answer" id="showresulte" style="display:none;">
+            <input type="text" id="solutionXresult" value="" class="hvnum2"disabled>
+        </div>
+        <div class="keyholder">
+          <div class="holder">
+              <input type="button" value="X⁴" class="add11" onclick="powswch('4')">
+              <input type="button" class="add2" value="c" onclick="clr()">
+              <input type="button" class="add2" value="<<" onclick="backspc()">
+              <input type="button" class="add2" value="%" onclick="dis('%')">
+              <input type="button" class="add2" value="÷" onclick="dis('/')">
+          </div>
+          <div class="holder">
+              <input type="button" value="X³" class="add11" onclick="powswch('3')">
+              <input type="button" class="add2" value="1" onclick="dis('1')">
+              <input type="button" class="add2" value="2" onclick="dis('2')">
+              <input type="button" class="add2" value="3" onclick="dis('3')">
+              <input type="button" class="add2" value="×" onclick="dis('*')">
+          </div>
+          <div class="holder">
+              <input type="button" value="X²" class="add11" onclick="powswch('2')">
+              <input type="button" class="add2" value="4" onclick="dis('4')">
+              <input type="button" class="add2" value="5" onclick="dis('5')">
+              <input type="button" class="add2" value="6" onclick="dis('6')">
+              <input type="button" class="add2" value="-" onclick="dis('-')">
+          </div>
+          <div class="holder">
+              <input type="button" value="X" class="add11" onclick="powswch('1')">
+              <input type="button" class="add2" value="7" onclick="dis('7')">
+              <input type="button" class="add2" value="8" onclick="dis('8')">
+              <input type="button" class="add2" value="9" onclick="dis('9')">
+              <input type="button" class="add2" value="+" onclick="dis('+')">
+          </div>
+          <div class="holder">
+              <input type="button" id="dsm1" class="add11" value="Reset" onclick="resetsc()">
+              <input type="button" class="fx" value="fx()" onclick="fx()">
+              <input type="button" class="add2" value="0" onclick="dis('0')">
+              <input type="button" class="add2" value="." onclick="dis('.')">
+              <input type="button" class="add2" value="=" onclick="solutionX()">
+          </div>
+        </div>
+    </div>
+    <div style="display:none;" id="ramholder">
+      <input type="text" id="calculram" value="">
+      <input type="text" id="myhood" value="">
+      <input type="text" id="XXX" value="">
+      <input type="text" id="X" value="">
+      <input type="text" id="Y" value="">
+      <input type="text" id="RamX" value="">
+      <input type="text" id="RamY" value="">
+      <input type="text" id="RamZ" value="">
+      <input type="text" id="problemX" value="">
+      <input type="text" id="RAMCO1" value="">
+      <input type="text" id="RAMCO2" value="">
+      <input type="text" id="RAMCO3" value="">
+      <input type="text" id="RAMCO4" value="">
+      <input type="text" id="ANS" value="">
+    </div>
+    <script>
+        // Function that display value
+        var MY;
+        var M;
+        var N;
+        var R;
+        var cleaner = 000;
+        var cleancheck = 111;
+        var activalx = 1;
+        var powermangment = 4;
+        document.getElementById('fx1').style.border = "1px solid red";
+        function activeX(aleXa) {
+          if (aleXa == 1) {
+            document.getElementById('fx1').style.border = "1px solid red";
+            document.getElementById('fx3').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx5').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx7').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx9').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            activalx = 1;
+          }
+          else if (aleXa == 2) {
+            document.getElementById('fx3').style.border = "1px solid red";
+            document.getElementById('fx1').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx5').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx7').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx9').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            activalx = 2;
+          }
+          else if (aleXa == 3) {
+            document.getElementById('fx5').style.border = "1px solid red";
+            document.getElementById('fx3').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx1').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx7').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx9').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            activalx = 3;
+          }
+          else if (aleXa == 4) {
+            document.getElementById('fx7').style.border = "1px solid red";
+            document.getElementById('fx3').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx5').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx1').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx9').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            activalx = 4;
+          }
+          else if (aleXa == 5) {
+            document.getElementById('fx9').style.border = "1px solid red";
+            document.getElementById('fx3').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx5').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx7').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx1').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            activalx = 5;
+          }
+        }
+        function dis(val) {
+          var check11 = document.getElementById('calcu').style.display;
+          var check12 = document.getElementById('functionX').style.display;
+          if (check11 == "block") {
+            if (val=="="||val=="+"||val=="-"||val=="*"||val=="/"||val=="%"||val=="^"||val=="^rt^") {
+              if (val == "pi") {
+                document.getElementById("result").value += 3.14159265;
+              }
+              else if (val == "ex") {
+                document.getElementById("result").value += 2.71828183;
+              }
+              else if (val == "^rt^") {
+                document.getElementById("result").value += "^(1/";
+              }
+              else {
+                document.getElementById("result").value += val
+              }
+              cleaner = 000;
+              cleancheck = 111;
+            }
+            else {
+              if (cleaner == cleancheck) {
+                document.getElementById("result").value = "";
+                cleaner = 000;
+                cleancheck = 111;
+                if (val == "pi") {
+                  document.getElementById("result").value += 3.14159265;
+                }
+                else if (val == "ex") {
+                  document.getElementById("result").value += 2.71828183;
+                }
+                else {
+                  document.getElementById("result").value += val
+                }
+              }
+              else {
+                if (val == "pi") {
+                  document.getElementById("result").value += 3.14159265;
+                }
+                else if (val == "ex") {
+                  document.getElementById("result").value += 2.71828183;
+                }
+                else if (val == "^rt^") {
+                  document.getElementById("result").value += "^(1/";
+                }
+                else {
+                  document.getElementById("result").value += val
+                }
+              }
+            }
+            solution()
+          }
+          else if (check12 == "block") {
+            if (activalx == 1) {
+              if (val == "pi") {
+                document.getElementById("fx1").value += 3.14159265;
+              }
+              else if (val == "ex") {
+                document.getElementById("fx1").value += 2.71828183;
+              }
+              else if (val == "^rt^") {
+                document.getElementById("fx1").value += "^(1/";
+              }
+              else {
+                document.getElementById("fx1").value += val
+              }
+            }
+            else if (activalx == 2) {
+              if (val == "pi") {
+                document.getElementById("fx3").value += 3.14159265;
+              }
+              else if (val == "ex") {
+                document.getElementById("fx3").value += 2.71828183;
+              }
+              else if (val == "^rt^") {
+                document.getElementById("fx3").value += "^(1/";
+              }
+              else {
+                document.getElementById("fx3").value += val
+              }
+            }
+            else if (activalx == 3) {
+              if (val == "pi") {
+                document.getElementById("fx5").value += 3.14159265;
+              }
+              else if (val == "ex") {
+                document.getElementById("fx5").value += 2.71828183;
+              }
+              else if (val == "^rt^") {
+                document.getElementById("fx5").value += "^(1/";
+              }
+              else {
+                document.getElementById("fx5").value += val
+              }
+            }
+            else if (activalx == 4) {
+              if (val == "pi") {
+                document.getElementById("fx7").value += 3.14159265;
+              }
+              else if (val == "ex") {
+                document.getElementById("fx7").value += 2.71828183;
+              }
+              else if (val == "^rt^") {
+                document.getElementById("fx7").value += "^(1/";
+              }
+              else {
+                document.getElementById("fx7").value += val
+              }
+            }
+            else if (activalx == 5) {
+              if (val == "pi") {
+                document.getElementById("fx9").value += 3.14159265;
+              }
+              else if (val == "ex") {
+                document.getElementById("fx9").value += 2.71828183;
+              }
+              else if (val == "^rt^") {
+                document.getElementById("fx9").value += "^(1/";
+              }
+              else {
+                document.getElementById("fx9").value += val
+              }
+            }
+          }
+        }
+        var cal = document.getElementById("calcu");
+        cal.onkeyup = function (event) {
+            if (event.keyCode === 13) {
+                console.log("Enter");
+                let x = document.getElementById("result").value
+                console.log(x);
+            }
+        }
+        //switch functions
+        function Snd() {
+          var swm1 = document.getElementById("dsm25");
+          var swm2 = document.getElementById("dsm24");
+          var swm3 = document.getElementById("dsm23");
+          var swm4 = document.getElementById("dsm22");
+          var swm5 = document.getElementById("dsm21");
+          var swm6 = document.getElementById("dsm20");
+          if (swm1.style.display == "none") {
+            document.getElementById("dsm25").style.display = "block";
+            document.getElementById("dsm24").style.display = "block";
+            document.getElementById("dsm23").style.display = "block";
+            document.getElementById("dsm22").style.display = "none";
+            document.getElementById("dsm21").style.display = "none";
+            document.getElementById("dsm20").style.display = "none";
+          }
+          else {
+            document.getElementById("dsm25").style.display = "none";
+            document.getElementById("dsm24").style.display = "none";
+            document.getElementById("dsm23").style.display = "none";
+            document.getElementById("dsm22").style.display = "block";
+            document.getElementById("dsm21").style.display = "block";
+            document.getElementById("dsm20").style.display = "block";
+          }
+        }
+        //ans
+        function ans() {
+          var ANS = document.getElementById("ANS").value;
+          document.getElementById("result").value += ANS;
+        }
+        //memory ('')
+        function memory(veeela) {
+          if (veeela  == "subt") {
+            var itemmomry = Number(document.getElementById("result").value);
+            if (itemmomry!="") {
+              var memoryitem =Number( document.getElementById("RAMCO4").value);
+              if (memoryitem!="") {
+                memoryitem = eval(memoryitem-itemmomry);
+                document.getElementById("result").value = eval(memoryitem);
+                document.getElementById("RAMCO4").value = eval(memoryitem);
+              }
+              else {
+                document.getElementById("RAMCO4").value = itemmomry
+                document.getElementById("result").value = itemmomry;
+              }
+              document.getElementById("secsol").value = "";
+            }
+            cleaner = itemmomry;
+            cleancheck =itemmomry;
+          }
+          else if (veeela  == "plus") {
+            var itemmomry = Number(document.getElementById("result").value);
+            if (itemmomry!="") {
+              var memoryitem =Number( document.getElementById("RAMCO4").value);
+              if (memoryitem!="") {
+                memoryitem = eval(memoryitem+itemmomry);
+                document.getElementById("result").value = eval(memoryitem);
+                document.getElementById("RAMCO4").value = eval(memoryitem);
+              }
+              else {
+                document.getElementById("RAMCO4").value = itemmomry
+                document.getElementById("result").value = itemmomry;
+              }
+              document.getElementById("secsol").value = "";
+            }
+            cleaner = itemmomry;
+            cleancheck =itemmomry;
+          }
+          else if (veeela  == "M") {
+            var memoryitem = Number(document.getElementById("RAMCO4").value);
+            if (memoryitem!="") {
+              document.getElementById("result").value += eval(memoryitem);
+            }
+          }
+          else if (veeela  == "MC") {
+            document.getElementById("RAMCO4").value = "";
+            document.getElementById("secsol").value = "Mimory Cleared";
+          }
+        }
+        //multiple varuablus functions switch
+        function powswch(hann) {
+          if (hann == 1) {
+            document.getElementById('fx1').style.display = "none";
+            document.getElementById('fx2').style.display = "none";
+            document.getElementById('fx3').style.display = "none";
+            document.getElementById('fx4').style.display = "none";
+            document.getElementById('fx5').style.display = "none";
+            document.getElementById('fx6').style.display = "block";
+            document.getElementById('fx7').style.display = "block";
+            document.getElementById('fx6').value = "(";
+            document.getElementById('fx10').style.display = "none";
+            document.getElementById('fx7').style.border = "1px solid red";
+            document.getElementById('fx3').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx5').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx9').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            activalx = 4;
+            powermangment = 1;
+          }
+          else if (hann == 2) {
+            document.getElementById('fx1').style.display = "none";
+            document.getElementById('fx2').style.display = "none";
+            document.getElementById('fx3').style.display = "none";
+            document.getElementById('fx4').style.display = "block";
+            document.getElementById('fx5').style.display = "block";
+            document.getElementById('fx6').style.display = "block";
+            document.getElementById('fx7').style.display = "block";
+            document.getElementById('fx6').value = ")*X²+(";
+            document.getElementById('fx4').value = "(";
+            document.getElementById('fx10').style.display = "none";
+            document.getElementById('fx5').style.border = "1px solid red";
+            document.getElementById('fx3').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx7').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx9').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            activalx = 3;
+            powermangment = 2;
+          }
+          else if (hann == 3) {
+            document.getElementById('fx1').style.display = "none";
+            document.getElementById('fx2').style.display = "block";
+            document.getElementById('fx3').style.display = "block";
+            document.getElementById('fx4').style.display = "block";
+            document.getElementById('fx5').style.display = "block";
+            document.getElementById('fx6').style.display = "block";
+            document.getElementById('fx7').style.display = "block";
+            document.getElementById('fx4').value = ")*X³+(";
+            document.getElementById('fx6').value = ")*X²+(";
+            document.getElementById('fx2').value = "(";
+            document.getElementById('fx10').style.display = "none";
+            document.getElementById('fx3').style.border = "1px solid red";
+            document.getElementById('fx1').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx5').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx7').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx9').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            powermangment = 3;activalx = 2;
+          }
+          else if (hann == 4) {
+            document.getElementById('fx1').style.display = "block";
+            document.getElementById('fx2').style.display = "block";
+            document.getElementById('fx3').style.display = "block";
+            document.getElementById('fx4').style.display = "block";
+            document.getElementById('fx5').style.display = "block";
+            document.getElementById('fx6').style.display = "block";
+            document.getElementById('fx7').style.display = "block";
+            document.getElementById('fx4').value = ")*X³+(";
+            document.getElementById('fx6').value = ")*X²+(";
+            document.getElementById('fx2').value = ")*X⁴+(";
+            document.getElementById('fx10').style.display = "block";
+            document.getElementById('fx1').style.border = "1px solid red";
+            document.getElementById('fx3').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx5').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx7').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            document.getElementById('fx9').style.border = "0.5px solid rgba(100, 100, 100, 0.5)";
+            powermangment = 4;activalx = 1;
+          }
+        }
+        // power X function
+        function solutionX() {
+          if (powermangment == 1) {
+            var a = eval(document.getElementById('fx7').value);
+            var b = eval(document.getElementById('fx9').value);
+            var x = b/a;
+            document.getElementById('regulare').style.display = "none";
+            document.getElementById('showresulte').style.display = "block";
+            document.getElementById('solutionXresult').value = "answer is : X = " + x;
+          }
+          else if (powermangment == 2) {
+            var a = eval(document.getElementById('fx5').value);
+            var b = eval(document.getElementById('fx7').value);
+            var c = eval(document.getElementById('fx9').value);
+            var delta = (Math.pow(b,2))-(4*a*c);
+            if (delta < 0) {
+              document.getElementById('regulare').style.display = "none";
+              document.getElementById('showresulte').style.display = "block";
+              document.getElementById('solutionXresult').value = "The Function Has no Solution";
+            }
+            else if (delta == 0) {
+              var x = (0-b)/(2*a);
+              document.getElementById('regulare').style.display = "none";
+              document.getElementById('showresulte').style.display = "block";
+              document.getElementById('solutionXresult').value = "answer is : X = " + x;
+            }
+            else if (delta > 0) {
+              var x1 = ((0-b)-(Math.pow(delta,(1/2))))/(2*a);
+              var x2 = ((0-b)+(Math.pow(delta,(1/2))))/(2*a);
+              document.getElementById('regulare').style.display = "none";
+              document.getElementById('showresulte').style.display = "block";
+              document.getElementById('solutionXresult').value = "answer is : X1 = " + x1 +" and X2 = " + x2;
+            }
+          }
+          else if (powermangment == 3) {
+            var nigtiveii = 0;
+            var delta = 0;
+            var a = eval(document.getElementById('fx3').value);
+            var b = eval(document.getElementById('fx5').value);
+            var c = eval(document.getElementById('fx7').value);
+            var d = eval(document.getElementById('fx9').value);
+            for (var i = 0; i < 1000; i++) {
+              px = (a*(Math.pow(i,3)))+(b*(Math.pow(i,2)))+(c*(i))+d;
+              if (px === 0) {
+                delta = i;
+                break;
+              }
+            }
+            for (var g = 0; g < 1000; g++) {
+              px = (a*(Math.pow(nigtiveii,3)))+(b*(Math.pow(nigtiveii,2)))+(c*(nigtiveii))+d;
+              if (px === 0) {
+                delta = nigtiveii;
+                break;
+              }
+              nigtiveii = nigtiveii - 1;
+            }
+            var at = a * delta;
+            b = b + at;
+            var bt = b * delta;
+            c = c + bt;
+            var ct = c * delta;
+            d = d + ct;
+            if (d == 0) {
+               delta1 = (Math.pow(b,2))-(4*a*c);
+              if (delta1 < 0) {
+                document.getElementById('regulare').style.display = "none";
+                document.getElementById('showresulte').style.display = "block";
+                document.getElementById('solutionXresult').value = "answer is : X = " + delta;
+              }
+              else if (delta1 == 0) {
+                var x = (0-b)/(2*a);
+                if (delta > 0.001) {
+                    MY=(Math.round(delta));
+            				 if (MY > delta){
+            							M=(MY-1);
+            							N=((delta-M)*1000);
+            							R=((Math.round(N))/1000);
+            							delta=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((delta-M)*1000);
+            							R=((Math.round(N))/1000);
+            							delta=(M+R);
+            					}
+                }
+                if (x > 0.001) {
+                    MY=(Math.round(x));
+            				 if (MY > x){
+            							M=(MY-1);
+            							N=((x-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((x-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x=(M+R);
+            					}
+                }
+                document.getElementById('regulare').style.display = "none";
+                document.getElementById('showresulte').style.display = "block";
+                document.getElementById('solutionXresult').value = "answer is : X1 = "+delta+" and X2 = "+x;
+              }
+              else if (delta1 > 0) {
+                var x1 = ((0-b)-(Math.pow(delta1,(1/2))))/(2*a);
+                var x2 = ((0-b)+(Math.pow(delta1,(1/2))))/(2*a);
+                if (delta > 0.001) {
+                    MY=(Math.round(delta));
+            				 if (MY > delta){
+            							M=(MY-1);
+            							N=((delta-M)*1000);
+            							R=((Math.round(N))/1000);
+            							delta=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((delta-M)*1000);
+            							R=((Math.round(N))/1000);
+            							delta=(M+R);
+            					}
+                }
+                if (x1 > 0.001) {
+                    MY=(Math.round(x1));
+            				 if (MY > x1){
+            							M=(MY-1);
+            							N=((x1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x1=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((x1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x1=(M+R);
+            					}
+                }
+                if (x2 > 0.001) {
+                    MY=(Math.round(x2));
+            				 if (MY > x2){
+            							M=(MY-1);
+            							N=((x2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x2=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((x2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x2=(M+R);
+            					}
+                }
+                document.getElementById('regulare').style.display = "none";
+                document.getElementById('showresulte').style.display = "block";
+                document.getElementById('solutionXresult').value = "answer is : X1 = "+delta+" and X2 = "+x1+" and X3 = "+x2;
+              }
+            }
+            else {
+              document.getElementById('regulare').style.display = "none";
+              document.getElementById('showresulte').style.display = "block";
+              document.getElementById('solutionXresult').value = "There are no Solutions";
+            }
+          }
+          else if (powermangment == 4) {
+            var a = eval(document.getElementById('fx1').value);
+            var b = eval(document.getElementById('fx3').value);
+            var c = eval(document.getElementById('fx5').value);
+            var d = eval(document.getElementById('fx7').value);
+            var e = eval(document.getElementById('fx9').value);
+            var solutionobv1 = "";
+            var solutionobv2 = "";
+            var nigtiveii = 0;
+            for (var i = 0; i < 1000; i++) {
+              px = (a*(Math.pow(i,4)))+(b*(Math.pow(i,3)))+(c*(Math.pow(i,2)))+(d*(i))+e;
+              if (px == 0) {
+                solutionobv1 = i;
+                break;
+              }
+            }
+            for (var i = 0; i < 1000; i++) {
+              px = (a*(Math.pow(nigtiveii,4)))+(b*(Math.pow(nigtiveii,3)))+(c*(Math.pow(nigtiveii,2)))+(d*(nigtiveii))+e;
+              if (px == 0) {
+                solutionobv1 = nigtiveii;
+                break;
+              }
+              nigtiveii = nigtiveii-1;
+            }
+            var at = a * solutionobv1;
+            b = b + at;
+            var bt = b * solutionobv1;
+            c = c + bt;
+            var ct = c * solutionobv1;
+            d = d + ct;
+            var dt = d * solutionobv1;
+            e = e + dt;
+            var nigtiveii = 0;
+            for (var i = 0; i < 1000; i++) {
+              px = (a*(Math.pow(i,3)))+(b*(Math.pow(i,2)))+(c*(i))+d;
+              if (px === 0) {
+                solutionobv2 = i;
+                break;
+              }
+            }
+            for (var g = 0; g < 1000; g++) {
+              px = (a*(Math.pow(nigtiveii,3)))+(b*(Math.pow(nigtiveii,2)))+(c*(nigtiveii))+d;
+              if (px === 0) {
+                solutionobv2 = nigtiveii;
+                break;
+              }
+              nigtiveii = nigtiveii - 1;
+            }
+            var at = a * solutionobv2;
+            b = b + at;
+            var bt = b * solutionobv2;
+            c = c + bt;
+            var ct = c * solutionobv2;
+            d = d + ct;
+            if (d == 0) {
+               delta1 = (Math.pow(b,2))-(4*a*c);
+              if (delta1 < 0) {
+                if (solutionobv1 > 0.001) {
+                    MY=(Math.round(solutionobv1));
+            				 if (MY > solutionobv1){
+            							M=(MY-1);
+            							N=((solutionobv1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv1=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((solutionobv1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv1=(M+R);
+            					}
+                }
+                if (solutionobv2 > 0.001) {
+                    MY=(Math.round(solutionobv2));
+            				 if (MY > solutionobv2){
+            							M=(MY-1);
+            							N=((solutionobv2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv2=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((solutionobv2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv2=(M+R);
+            					}
+                }
+                document.getElementById('regulare').style.display = "none";
+                document.getElementById('showresulte').style.display = "block";
+                document.getElementById('solutionXresult').value = "answer is : X1 = " + solutionobv1+" And X2 = "+solutionobv2;
+              }
+              else if (delta1 == 0) {
+                if (solutionobv1 > 0.001) {
+                    MY=(Math.round(solutionobv1));
+            				 if (MY > solutionobv1){
+            							M=(MY-1);
+            							N=((solutionobv1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv1=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((solutionobv1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv1=(M+R);
+            					}
+                }
+                if (solutionobv2 > 0.001) {
+                    MY=(Math.round(solutionobv2));
+            				 if (MY > solutionobv2){
+            							M=(MY-1);
+            							N=((solutionobv2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv2=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((solutionobv2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv2=(M+R);
+            					}
+                }
+                if (x > 0.001) {
+                    MY=(Math.round(x));
+            				 if (MY > x){
+            							M=(MY-1);
+            							N=((x-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((x-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x=(M+R);
+            					}
+                }
+                var x = (0-b)/(2*a);
+                document.getElementById('regulare').style.display = "none";
+                document.getElementById('showresulte').style.display = "block";
+                document.getElementById('solutionXresult').value = "answer is : X1 = "+solutionobv1+" and X2 = "+solutionobv2+" And X3 = "+x;
+              }
+              else if (delta1 > 0) {
+                var x1 = ((0-b)-(Math.pow(delta1,(1/2))))/(2*a);
+                var x2 = ((0-b)+(Math.pow(delta1,(1/2))))/(2*a);
+                document.getElementById('regulare').style.display = "none";
+                document.getElementById('showresulte').style.display = "block";
+                if (solutionobv1 > 0.001) {
+                    MY=(Math.round(solutionobv1));
+            				 if (MY > solutionobv1){
+            							M=(MY-1);
+            							N=((solutionobv1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv1=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((solutionobv1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv1=(M+R);
+            					}
+                }
+                if (solutionobv2 > 0.001) {
+                    MY=(Math.round(solutionobv2));
+            				 if (MY > solutionobv2){
+            							M=(MY-1);
+            							N=((solutionobv2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv2=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((solutionobv2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							solutionobv2=(M+R);
+            					}
+                }
+                if (x1 > 0.001) {
+                    MY=(Math.round(x1));
+            				 if (MY > x1){
+            							M=(MY-1);
+            							N=((x1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x1=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((x1-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x1=(M+R);
+            					}
+                }
+                if (x2 > 0.001) {
+                    MY=(Math.round(x2));
+            				 if (MY > x2){
+            							M=(MY-1);
+            							N=((x2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x2=(M+R);
+            					 }
+                       else {
+            							M=(MY);
+            							N=((x2-M)*1000);
+            							R=((Math.round(N))/1000);
+            							x2=(M+R);
+            					}
+                }
+                if (solutionobv1 != solutionobv2) {
+                  document.getElementById('solutionXresult').value = "answer is : X1 = "+solutionobv1+" And X2 = "+solutionobv2+" and X3 = "+x1+" and X4 = "+x2;
+                }
+                else {
+                  document.getElementById('solutionXresult').value = "answer is : X1 = "+solutionobv1+" and X2 = "+x1+" and X3 = "+x2;
+                }
+              }
+            }
+            else {
+              document.getElementById('regulare').style.display = "none";
+              document.getElementById('showresulte').style.display = "block";
+              document.getElementById('solutionXresult').value = "There are no Solutions";
+            }
+          }
+        }
+        //rad degree switch
+        function degrad() {
+          var dsm2 = document.getElementById("deg").innerHTML;
+          if (dsm2 == "D") {
+            document.getElementById("deg").innerHTML = "R";
+          }
+          else {
+            document.getElementById("deg").innerHTML = "D";
+          }
+        }
+        //reset function
+        function resetsc() {
+          document.getElementById('regulare').style.display = "";
+          document.getElementById('showresulte').style.display = "none";
+          document.getElementById('solutionXresult').value = "";
+          document.getElementById("fx1").value = "";
+          document.getElementById("fx3").value = "";
+          document.getElementById("fx5").value = "";
+          document.getElementById("fx7").value = "";
+          document.getElementById("fx9").value = "";
+        }
+        //main function
+        function solution(mira) {
+          var shower = document.getElementById("result").value;
+          var multX =0;
+          var account = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+          var arcst = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+          var arcen = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+          var checkP = 0;
+          var checkM = 0;
+          var inputXYX = document.getElementById("result").value;
+          document.getElementById('RamX').value = inputXYX;
+          const thisit = inputXYX.split("");
+          for (var i = 0; i < thisit.length; i++) {
+            var ram = document.getElementById('RamX').value;
+            var inputX = ram.replace(" ", "");
+            document.getElementById('RamX').value = inputX;
+          }
+          document.getElementById('RamZ').value = inputX;
+          for (var i = 0; i < thisit.length; i++) {
+            var ram = document.getElementById('RamZ').value;
+            const myArray = ram.replace("+", " plus ");
+            const myARray = myArray.replace("-", " subt ");
+            const myARRay = myARray.replace("*", " mult ");
+            const myARRAY1 = myARRay.replace("/", " divi ");
+            const myARRAY2 = myARRAY1.replace("(", " starc ");
+            const myARRAY3 = myARRAY2.replace(")", " enarc ");
+            const myARRAY4 = myARRAY3.replace("^", " power ");
+            const myARRAY = myARRAY4.replace("%", " divir ");
+            document.getElementById('RamZ').value = myARRAY;
+          }
+          var myARRAY = document.getElementById('RamZ').value;
+          document.getElementById('RamY').value = myARRAY;
+          var accountXX = 0 ;
+          //Ram
+          const str = myARRAY.split(" ");
+          for (i = 0; i < str.length; i++) {
+            var ram = document.getElementById('RamY').value;
+            var myARRAy = ram.replace("  ", " ");
+            document.getElementById('RamY').value = myARRAy;
+          }
+          const checkterf = myARRAy.split(" ");
+          for (var i = 0; i < str.length; i++) {
+            if (checkterf[i] == checkterf[i+1]) {
+              if (checkterf[i] == "multi") {
+                var myARRAy = myARRAy.replace(" multi multi ", " multi ");
+              }
+              else if (checkterf[i] == "divi") {
+                var myARRAy = myARRAy.replace(" divi divi ", " divi ");
+              }
+              else if (checkterf[i] == "plus") {
+                var myARRAy = myARRAy.replace(" plus plus ", " plus ");
+              }
+              else if (checkterf[i] == "subt") {
+                var myARRAy = myARRAy.replace(" subt subt ", " subt ");
+              }
+              else if (checkterf[i] == "starc") {
+                var myARRAy = myARRAy.replace(" starc starc ", " starc ");
+              }
+              else if (checkterf[i] == "enarc") {
+                var myARRAy = myARRAy.replace(" enarc enarc ", " enarc ");
+              }
+              else if (checkterf[i] == "power") {
+                var myARRAy = myARRAy.replace(" power power ", " power ");
+              }
+              else if (checkterf[i] == "divir") {
+                var myARRAy = myARRAy.replace(" divir divir ", " divir ");
+              }
+            }
+          }
+          const nytrf = myARRAy.trim();
+          const myterf = myARRAy.split(" ");
+          var x=myterf.length;
+          var arccheckst = 0;
+          var arcchecken = 0;
+          for (i = 0; i < myterf.length; i++) {
+
+            if (myterf[i]!="mult" || myterf[i] != "subt" || myterf[i] != "plus" || myterf[i] != "divi") {
+              var input = document.createElement("input");
+              input.type = "text";
+              input.id = "ram"+i;
+              var myArra = document.createTextNode(myterf[i]);
+              input.appendChild(myArra);
+              var elemT = document.getElementById("ramholder");
+              elemT.appendChild(input);
+              document.getElementById("ram"+i).value = myterf[i];
+            }
+            else {
+              //do nothing
+            }
+          }
+          // varuablus
+          for (var i = 0; i < myterf.length; ++i) {
+            account[i] = Number(document.getElementById("ram"+i).value);
+          }
+          // function
+          for (var i = 0; i < myterf.length; i++) {
+            if (myterf[i]!="subt"&&myterf[i]!="plus"&&myterf[i]!="mult"&&myterf[i]!="divi"&&myterf[i]!="starc"&&myterf[i]!="enarc"&&myterf[i]!="power"&&myterf[i]!="divir") {
+              if (accountXX == 0) {
+                numberaccess = myterf[i];
+                document.getElementById('secsol').innerHTML = numberaccess;
+              }
+              else {
+                numberaccess = numberaccess + myterf[i];
+                document.getElementById('secsol').innerHTML = numberaccess;
+              }
+            }
+          }
+          var elemTX1 = document.getElementById("arcramholder");
+          var finchline = (myterf.length)-1;
+          enarc = 0 ; enarc2 = 0;
+          for (var i = 0; i < myterf.length; i++) {
+            if (myterf[i] == "power") {
+              if (myterf[i-1]=="enarc"&&myterf[i+1]=="starc") {
+                var vonst = i+1;
+                for (var d = 0; d < vonst; d++) {
+                  if (myterf[d]=="starc") {
+                    var starc = d;
+                  }
+                }
+                if (starc == 1) {
+                  var enarc = i-1;
+                }
+                else {
+                  var enarc = i-2;
+                }
+                var myhood = [];
+                for (var c = 0; c < myterf.length; c++) {
+                  myhood[c] = myterf[c]
+                }
+                var myequa = myhood.splice(starc, enarc);
+                document.getElementById('myhood').value = myequa;
+                var myequa = document.getElementById('myhood').value;
+                for (var v = 0; v < myterf.length; v++) {
+                  var mytest1 = myequa.replace("plus", "+");
+                  var mytest2 = mytest1.replace("subt", "-");
+                  var mytest3 = mytest2.replace("mult", "*");
+                  var mytest4 = mytest3.replace("divir", "%");
+                  var mytest5 = mytest4.replace("divi", "/");
+                  var mytest6 = mytest5.replace("starc", "(");
+                  var mytest7 = mytest6.replace("enarc", ")");
+                  var myequa = mytest7.replace("power", "^");
+                }
+                document.getElementById('myhood').value = myequa;
+                for (var f = 0; f < myterf.length; f++) {
+                  var myequa = document.getElementById('myhood').value;
+                  myequ1 = myequa.replace(",", " ");
+                  document.getElementById('myhood').value = myequ1;
+                }
+                var myequa1 = document.getElementById('myhood').value;
+                for (var d = i; d < myterf.length; d++) {
+                  if (myterf[d]=="enarc") {
+                    var enarc2 = d;
+                  }
+                }
+                if (enarc2 == 0) {
+                    myterf[myterf.length+1] = ")";
+                    enarc2 = myterf.length+1;
+                }
+                var starc2 = i+1;
+                var myhood = [];
+                var myhood2 = [];
+                for (var c = 0; c < myterf.length; c++) {
+                  myhood2[c] = myterf[c]
+                }
+                var myequa2 = myhood2.splice(starc2, enarc2);
+                document.getElementById('myhood').value = myequa2;
+                var myequa2 = document.getElementById('myhood').value;
+                for (var v = 0; v < myterf.length; v++) {
+                  var mytest1 = myequa2.replace("plus", "+");
+                  var mytest2 = mytest1.replace("subt", "-");
+                  var mytest3 = mytest2.replace("mult", "*");
+                  var mytest4 = mytest3.replace("divir", "%");
+                  var mytest5 = mytest4.replace("divi", "/");
+                  var mytest6 = mytest5.replace("starc", "(");
+                  var mytest7 = mytest6.replace("enarc", ")");
+                  var myequa2 = mytest7.replace("power", "^");
+                }
+                document.getElementById('myhood').value = myequa2;
+                for (var f = 0; f < myterf.length; f++) {
+                  var myequa2 = document.getElementById('myhood').value;
+                  myequ11 = myequa2.replace(",", " ");
+                  document.getElementById('myhood').value = myequ11;
+                }
+                var myequa11 = document.getElementById('myhood').value;
+                var myequa22 = eval(myequa11);
+                var myequa2 = eval(myequa1);
+                var myequa3 = Math.pow(myequa2, myequa22);
+                myterf[starc] = myequa3;
+                account[starc] = myequa3;
+                starc = starc+1;
+                starck = starc-1;
+                starsk = starc;
+                var myequa4 = myterf.splice(starc, enarc2-1);
+                var myequa4 = account.splice(starc, enarc2-1);
+                var myequa4 = myterf.splice(starsk, starck);
+                var myequa4 = account.splice(starsk, starck);
+                document.getElementById('myhood').value = myterf;
+              }
+              else if (myterf[i-1]=="enarc"&&myterf[i+1]=="subt"&&myterf[i+2]=="starc") {
+                var vonst = i+1;
+                for (var d = 0; d < vonst; d++) {
+                  if (myterf[d]=="starc") {
+                    var starc = d;
+                  }
+                }
+                if (starc == 1) {
+                  var enarc = i-1;
+                }
+                else {
+                  var enarc = i-2;
+                }
+                var myhood = [];
+                for (var c = 0; c < myterf.length; c++) {
+                  myhood[c] = myterf[c]
+                }
+                var myequa = myhood.splice(starc, enarc);
+                document.getElementById('myhood').value = myequa;
+                var myequa = document.getElementById('myhood').value;
+                for (var v = 0; v < myterf.length; v++) {
+                  var mytest1 = myequa.replace("plus", "+");
+                  var mytest2 = mytest1.replace("subt", "-");
+                  var mytest3 = mytest2.replace("mult", "*");
+                  var mytest4 = mytest3.replace("divir", "%");
+                  var mytest5 = mytest4.replace("divi", "/");
+                  var mytest6 = mytest5.replace("starc", "(");
+                  var mytest7 = mytest6.replace("enarc", ")");
+                  var myequa = mytest7.replace("power", "^");
+                }
+                document.getElementById('myhood').value = myequa;
+                for (var f = 0; f < myterf.length; f++) {
+                  var myequa = document.getElementById('myhood').value;
+                  myequ1 = myequa.replace(",", " ");
+                  document.getElementById('myhood').value = myequ1;
+                }
+                var myequa1 = document.getElementById('myhood').value;
+                for (var d = i; d < myterf.length; d++) {
+                  if (myterf[d]=="enarc") {
+                    var enarc2 = d;
+                  }
+                }
+                if (enarc2 == 0) {
+                    myterf[myterf.length+1] = ")";
+                    enarc2 = myterf.length+1;
+                }
+                var starc2 = i+1;
+                var myhood = [];
+                var myhood2 = [];
+                for (var c = 0; c < myterf.length; c++) {
+                  myhood2[c] = myterf[c]
+                }
+                var myequa2 = myhood2.splice(starc2, enarc2);
+                document.getElementById('myhood').value = myequa2;
+                var myequa2 = document.getElementById('myhood').value;
+                for (var v = 0; v < myterf.length; v++) {
+                  var mytest1 = myequa2.replace("plus", "+");
+                  var mytest2 = mytest1.replace("subt", "-");
+                  var mytest3 = mytest2.replace("mult", "*");
+                  var mytest4 = mytest3.replace("divir", "%");
+                  var mytest5 = mytest4.replace("divi", "/");
+                  var mytest6 = mytest5.replace("starc", "(");
+                  var mytest7 = mytest6.replace("enarc", ")");
+                  var myequa2 = mytest7.replace("power", "^");
+                }
+                document.getElementById('myhood').value = myequa2;
+                for (var f = 0; f < myterf.length; f++) {
+                  var myequa2 = document.getElementById('myhood').value;
+                  myequ11 = myequa2.replace(",", " ");
+                  document.getElementById('myhood').value = myequ11;
+                }
+                var myequa11 = document.getElementById('myhood').value;
+                var myequa22 = eval(myequa11);
+                var myequa2 = eval(myequa1);
+                var myequa3 = Math.pow(myequa2, (myequa22));
+                myterf[starc] = myequa3;
+                account[starc] = myequa3;
+                starc = starc+1;
+                starck = starc-1;
+                starsk = starc;
+                var myequa4 = myterf.splice(starc, enarc2-1);
+                var myequa4 = account.splice(starc, enarc2-1);
+                var myequa4 = myterf.splice(starsk, starck);
+                var myequa4 = account.splice(starsk, starck);
+                document.getElementById('myhood').value = myterf;
+              }
+              else if (myterf[i-1]=="enarc") {
+                if (myterf[i+1]=="subt") {
+                  for (var d = 0; d < myterf.length; d++) {
+                    if (myterf[d]=="starc") {
+                      var starc = d;
+                    }
+                  }
+                  if (starc == 1) {
+                    var enarc = i-1;
+                  }
+                  else {
+                    var enarc = i-2;
+                  }
+                  var myhood = [];
+                  for (var c = 0; c < myterf.length; c++) {
+                    myhood[c] = myterf[c]
+                  }
+                  var myequa = myhood.splice(starc, enarc);
+
+                  document.getElementById('myhood').value = myequa;
+                  var myequa = document.getElementById('myhood').value;
+                  for (var v = 0; v < myterf.length; v++) {
+                    var mytest1 = myequa.replace("plus", "+");
+                    var mytest2 = mytest1.replace("subt", "-");
+                    var mytest3 = mytest2.replace("mult", "*");
+                    var mytest4 = mytest3.replace("divir", "%");
+                    var mytest5 = mytest4.replace("divi", "/");
+                    var mytest6 = mytest5.replace("starc", "(");
+                    var mytest7 = mytest6.replace("enarc", ")");
+                    var myequa = mytest7.replace("power", "^");
+                  }
+                  document.getElementById('myhood').value = myequa;
+                  for (var f = 0; f < myterf.length; f++) {
+                    var myequa = document.getElementById('myhood').value;
+                    myequ1 = myequa.replace(",", " ");
+                    document.getElementById('myhood').value = myequ1;
+                  }
+                  var myequa1 = document.getElementById('myhood').value;
+
+                  var myequa2 = eval(myequa1);
+                  var myequa3 = Math.pow(myequa2, (0-account[i+2]));
+                  myterf[starc] = myequa3;
+                  account[starc] = myequa3;
+                  starc = starc+1;
+                  starck = starc-1;
+                  starsk = starc;
+                  var myequa4 = myterf.splice(starc, i+2);
+                  var myequa4 = account.splice(starc, i+2);
+                  var myequa4 = myterf.splice(starsk, starck);
+                  var myequa4 = account.splice(starsk, starck);
+                  document.getElementById('myhood').value = myterf;
+                }
+                else {
+                  for (var d = 0; d < myterf.length; d++) {
+                    if (myterf[d]=="starc") {
+                      var starc = d;
+                    }
+                  }
+                  if (starc == 1) {
+                    var enarc = i-1;
+                  }
+                  else {
+                    var enarc = i-2;
+                  }
+                  var myhood = [];
+                  for (var c = 0; c < myterf.length; c++) {
+                    myhood[c] = myterf[c]
+                  }
+                  var myequa = myhood.splice(starc, enarc);
+
+                  document.getElementById('myhood').value = myequa;
+                  var myequa = document.getElementById('myhood').value;
+                  for (var v = 0; v < myterf.length; v++) {
+                    var mytest1 = myequa.replace("plus", "+");
+                    var mytest2 = mytest1.replace("subt", "-");
+                    var mytest3 = mytest2.replace("mult", "*");
+                    var mytest4 = mytest3.replace("divir", "%");
+                    var mytest5 = mytest4.replace("divi", "/");
+                    var mytest6 = mytest5.replace("starc", "(");
+                    var mytest7 = mytest6.replace("enarc", ")");
+                    var myequa = mytest7.replace("power", "^");
+                  }
+                  document.getElementById('myhood').value = myequa;
+                  for (var f = 0; f < myterf.length; f++) {
+                    var myequa = document.getElementById('myhood').value;
+                    myequ1 = myequa.replace(",", " ");
+                    document.getElementById('myhood').value = myequ1;
+                  }
+                  var myequa1 = document.getElementById('myhood').value;
+
+                  var myequa2 = eval(myequa1);
+                  var myequa3 = Math.pow(myequa2, account[i+1]);
+                  myterf[starc] = myequa3;
+                  account[starc] = myequa3;
+                  starc = starc+1;
+                  starck = starc-1;
+                  starsk = starc;
+                  var myequa4 = myterf.splice(starc, i+1);
+                  var myequa4 = account.splice(starc, i+1);
+                  var myequa4 = myterf.splice(starsk, starck);
+                  var myequa4 = account.splice(starsk, starck);
+                  document.getElementById('myhood').value = myterf;
+                }
+              }
+              else if (myterf[i+1]=="starc") {
+                for (var d = i; d < myterf.length; d++) {
+                  if (myterf[d]=="enarc") {
+                    var enarc = d;
+                  }
+                }
+                if (enarc == 0) {
+                    myterf[myterf.length+1] = ")";
+                    enarc = myterf.length+1;
+                }
+                var starc = i+1;
+                var myhood = [];
+                for (var c = 0; c < myterf.length; c++) {
+                  myhood[c] = myterf[c]
+                }
+                var myequa = myhood.splice(starc, enarc);
+
+                document.getElementById('myhood').value = myequa;
+                var myequa = document.getElementById('myhood').value;
+                for (var v = 0; v < myterf.length; v++) {
+                  var mytest1 = myequa.replace("plus", "+");
+                  var mytest2 = mytest1.replace("subt", "-");
+                  var mytest3 = mytest2.replace("mult", "*");
+                  var mytest4 = mytest3.replace("divir", "%");
+                  var mytest5 = mytest4.replace("divi", "/");
+                  var mytest6 = mytest5.replace("starc", "(");
+                  var mytest7 = mytest6.replace("enarc", ")");
+                  var myequa = mytest7.replace("power", "^");
+                }
+                document.getElementById('myhood').value = myequa;
+                for (var f = 0; f < myterf.length; f++) {
+                  var myequa = document.getElementById('myhood').value;
+                  myequ1 = myequa.replace(",", " ");
+                  document.getElementById('myhood').value = myequ1;
+                }
+                var myequa1 = document.getElementById('myhood').value;
+                var myequa2 = eval(myequa1);
+                var myequa3 = Math.pow(account[i-1], myequa2);
+                myterf[starc] = myequa3;
+                account[starc] = myequa3;
+                starc = starc+1;
+                starck = starc-1;
+                starsk = starc;
+                var myequa4 = myterf.splice(starc, enarc-1);
+                var myequa4 = account.splice(starc, enarc-1);
+                var myequa4 = myterf.splice(i-1, starck);
+                var myequa4 = account.splice(i-1, starck);
+                document.getElementById('myhood').value = myterf;
+
+              }
+              else if (myterf[i+1]=="subt") {
+                if (myterf[i+2]=="starc") {
+                  for (var d = i; d < myterf.length; d++) {
+                    if (myterf[d]=="enarc") {
+                      var enarc = d;
+                    }
+                  }
+                  if (enarc == 0) {
+                      myterf[myterf.length+1] = ")";
+                      enarc = myterf.length+1;
+                    }
+                  var starc = i+1;
+                  var myhood = [];
+                  for (var c = 0; c < myterf.length; c++) {
+                    myhood[c] = myterf[c]
+                  }
+                  var myequa = myhood.splice(starc, enarc);
+                  document.getElementById('myhood').value = myequa;
+                  var myequa = document.getElementById('myhood').value;
+                  for (var v = 0; v < myterf.length; v++) {
+                    var mytest1 = myequa.replace("plus", "+");
+                    var mytest2 = mytest1.replace("subt", "-");
+                    var mytest3 = mytest2.replace("mult", "*");
+                    var mytest4 = mytest3.replace("divir", "%");
+                    var mytest5 = mytest4.replace("divi", "/");
+                    var mytest6 = mytest5.replace("starc", "(");
+                    var mytest7 = mytest6.replace("enarc", ")");
+                    var myequa = mytest7.replace("power", "^");
+                  }
+                  document.getElementById('myhood').value = myequa;
+                  for (var f = 0; f < myterf.length; f++) {
+                    var myequa = document.getElementById('myhood').value;
+                    myequ1 = myequa.replace(",", " ");
+                    document.getElementById('myhood').value = myequ1;
+                  }
+                  var myequa1 = document.getElementById('myhood').value;
+                  var myequa2 = eval(myequa1);
+                  var myequa3 = Math.pow(account[i-1], (myequa2));
+                  myterf[starc] = myequa3;
+                  account[starc] = myequa3;
+                  starc = starc+1;
+                  starck = starc-1;
+                  starsk = starc;
+                  var myequa4 = myterf.splice(starc, enarc-1);
+                  var myequa4 = account.splice(starc, enarc-1);
+                  var myequa4 = myterf.splice(i-1, starck);
+                  var myequa4 = account.splice(i-1, starck);
+                  document.getElementById('myhood').value = myterf;
+
+                }
+                else {
+                  var myequa3 = Math.pow(account[i-1], (0-myterf[i+2]));
+                  myterf[i-1] = myequa3;
+                  account[i-1] = myequa3;
+                  var myequa4 = myterf.splice(i, i+1);
+                  var myequa4 = account.splice(i, i+1);
+                  document.getElementById('myhood').value = myterf;
+
+                }
+              }
+              else if (true) {
+                var myequa3 = Math.pow(account[i-1], account[i+1]);
+                myterf[i-1] = myequa3;
+                account[i-1] = myequa3;
+                var myequa4 = myterf.splice(i, i+1);
+                var myequa4 = account.splice(i, i+1);
+                document.getElementById('myhood').value = myterf;
+
+
+              }
+            }
+          }
+          //resulte
+          document.getElementById('myhood').value = myterf;
+          var myequa = document.getElementById('myhood').value;
+          for (var v = 0; v < myterf.length; v++) {
+            var mytest1 = myequa.replace("plus", "+");
+            var mytest2 = mytest1.replace("subt", "-");
+            var mytest3 = mytest2.replace("mult", "*");
+            var mytest4 = mytest3.replace("divir", "%");
+            var mytest5 = mytest4.replace("divi", "/");
+            var mytest6 = mytest5.replace("starc", "(");
+            var mytest7 = mytest6.replace("enarc", ")");
+            var myequa = mytest7.replace("power", "^");
+          }
+          document.getElementById('myhood').value = myequa;
+          for (var f = 0; f < myterf.length; f++) {
+            var myequa = document.getElementById('myhood').value;
+            myequ1 = myequa.replace(",", " ");
+            document.getElementById('myhood').value = myequ1;
+          }
+          var myequa1 = document.getElementById('myhood').value;
+          if (inputXYX == "") {
+            accountXX = ""
+          }
+          else {
+            accountXX = eval(myequa1);
+          }
+          var myremovcount = myARRAy.split(" ");
+          var dsm2 = document.getElementById("dsm20").value;
+          if (mira == "=") {
+            if (accountXX > 0.001) {
+                MY=(Math.round(accountXX));
+            				 if (MY > accountXX){
+            							M=(MY-1);
+            							N=((accountXX-M)*1000);
+            							R=((Math.round(N))/1000);
+            							accountXX=(M+R);
+            					 } else {
+            							M=(MY);
+            							N=((accountXX-M)*1000);
+            							R=((Math.round(N))/1000);
+            							accountXX=(M+R);
+            						}
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            document.getElementById("secsol").value = "";
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "sqrt") {
+            accountXX = Math.sqrt(accountXX);
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("secsol").value = "";
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "exmk") {
+            var counter = accountXX - 1 ;
+            var counter1 = accountXX - 1 ;
+            for (var i = 0; i < counter; i++) {
+              accountXX = accountXX * (counter1)
+              counter1 = counter1 - 1;
+            }
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("secsol").value = "";
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "rt-1") {
+            accountXX = Math.pow(accountXX, -1);
+            document.getElementById("secsol").value = "";
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "sin") {
+            var dsm2 = document.getElementById("dsm20").value;
+            if (dsm2 == "deg") {
+              var A = (accountXX * 3.141592653589794)/180;
+            }
+            else {
+              var A = accountXX ;
+            }
+            accountXX = Math.sin(A);
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("secsol").value = "";
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "cos") {
+            var dsm2 = document.getElementById("dsm20").value;
+            if (dsm2 == "deg") {
+              var A = (accountXX * 3.141592653589794)/180;
+            }
+            else {
+              var A = accountXX ;
+            }
+            accountXX = Math.cos(A);
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("secsol").value = "";
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "tan") {
+            var dsm2 = document.getElementById("dsm20").value;
+            if (dsm2 == "deg") {
+              var A = (accountXX * 3.141592653589794)/180;
+            }
+            else {
+              var A = accountXX ;
+            }
+            accountXX = Math.tan(A);
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("secsol").value = "";
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "sin-1") {
+            accountXX = Math.asin(accountXX);
+            document.getElementById("secsol").value = "";
+            if (dsm2 == "deg") {
+              accountXX = (accountXX * 180)/3.1415926535897933299;
+            }
+            else {
+              accountXX = accountXX;
+            }
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "cos-1") {
+            accountXX = Math.acos(accountXX);
+            document.getElementById("secsol").value = "";
+            if (dsm2 == "deg") {
+              accountXX = (accountXX * 180)/3.1415926535897933299;
+            }
+            else {
+              accountXX = accountXX;
+            }
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "tan-1") {
+            accountXX = Math.atan(accountXX);
+            document.getElementById("secsol").value = "";
+            if (dsm2 == "deg") {
+              accountXX = (accountXX * 180)/3.1415926535897933299;
+            }
+            else {
+              accountXX = accountXX;
+            }
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "log") {
+            accountXX = Math.log10(accountXX);
+            document.getElementById("secsol").value = "";
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "ln") {
+            accountXX = Math.log(accountXX);
+            document.getElementById("secsol").value = "";
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "^-3^") {
+            accountXX = Math.pow(accountXX, (1/3));
+            document.getElementById("secsol").value = "";
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "exX") {
+            accountXX = Math.pow(2.71828183, accountXX);
+            document.getElementById("secsol").value = "";
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "tenX") {
+            accountXX = Math.pow(10, accountXX);
+            document.getElementById("secsol").value = "";
+            document.getElementById("ANS").value = accountXX;
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "abs") {
+            accountXX = Math.abs(accountXX);
+            document.getElementById("secsol").value = "";
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "square") {
+            accountXX = Math.pow(accountXX, 2);
+            document.getElementById("secsol").value = "";
+            if (accountXX > 0.001) {
+              MY=(Math.round(accountXX));
+                   if (MY > accountXX){
+                        M=(MY-1);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                     } else {
+                        M=(MY);
+                        N=((accountXX-M)*1000);
+                        R=((Math.round(N))/1000);
+                        accountXX=(M+R);
+                      }
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else if (mira == "cube") {
+            accountXX = Math.pow(accountXX, 3);
+            document.getElementById("secsol").value = "";
+            if (accountXX > 0.001) {
+                MY=(Math.round(accountXX));
+            				 if (MY > accountXX){
+            							M=(MY-1);
+            							N=((accountXX-M)*1000);
+            							R=((Math.round(N))/1000);
+            							accountXX=(M+R);
+            					 } else {
+            							M=(MY);
+            							N=((accountXX-M)*1000);
+            							R=((Math.round(N))/1000);
+            							accountXX=(M+R);
+            						}
+            }
+            document.getElementById("result").value = accountXX;
+            document.getElementById("ANS").value = accountXX;
+            cleaner = accountXX;
+            cleancheck =accountXX;
+          }
+          else {
+            if (accountXX > 0.001) {
+                MY=(Math.round(accountXX));
+            				 if (MY > accountXX){
+            							M=(MY-1);
+            							N=((accountXX-M)*1000);
+            							R=((Math.round(N))/1000);
+            							accountXX=(M+R);
+            					 } else {
+            							M=(MY);
+            							N=((accountXX-M)*1000);
+            							R=((Math.round(N))/1000);
+            							accountXX=(M+R);
+            						}
+            }
+            if (accountXX===999999999999999) {
+              accountXX = "Abdelkarim khelfaoui"
+            }
+            document.getElementById("secsol").value = accountXX;
+          }
+          for (var i = 0; i < myremovcount.length; i++) {
+            var elementD = document.getElementById("ram"+i);
+            elementD.remove();
+          }
+        }
+        // Function that clear the display
+        function clr() {
+            var check11 = document.getElementById('calcu').style.display;
+            var check12 = document.getElementById('functionX').style.display;
+            if (check11 == "block") {
+              document.getElementById("result").value = "";
+              document.getElementById("secsol").value = "";
+            }
+            else if (check12 == "block") {
+              document.getElementById("fx1").value = "";
+              document.getElementById("fx3").value = "";
+              document.getElementById("fx5").value = "";
+              document.getElementById("fx7").value = "";
+              document.getElementById("fx9").value = "";
+            }
+        }
+        // seantific
+        function fx() {
+          var shm1 = document.getElementById('calcu');
+          var shm2 = document.getElementById('functionX');
+          if (shm1.style.display == "none") {
+            shm1.style.display = "block";
+            shm2.style.display = "none";
+          }
+          else {
+            shm1.style.display = "none";
+            shm2.style.display = "block";
+          }
+        }
+        //backspace
+        function backspc() {
+          var check11 = document.getElementById('calcu').style.display;
+          var check12 = document.getElementById('functionX').style.display;
+          if (check11 == "block") {
+            const myequa = document.getElementById('result').value;
+            const equa = myequa.split("");
+            var x = equa.length-1;
+            equa[x] = "";
+            document.getElementById('calculram').value = equa;
+            var dex = document.getElementById('calculram').value;
+            document.getElementById('calculram').value = dex;
+            const equa3 = myequa.split("");
+            var y = (equa3.length+1)*2;
+            for (var f = 0; f < y; f++) {
+              var myequ1 = document.getElementById('calculram').value;
+              var dex = myequ1.replace(",", "");
+              document.getElementById('calculram').value = dex;
+            }
+            var myequ2 = document.getElementById('calculram').value;
+            document.getElementById('result').value = myequ2;
+            solution()
+          }
+          else if (check12 == "block") {
+            if (activalx == 1) {
+              const myequa = document.getElementById('fx1').value;
+              const equa = myequa.split("");
+              var x = equa.length-1;
+              equa[x] = "";
+              document.getElementById('calculram').value = equa;
+              var dex = document.getElementById('calculram').value;
+              document.getElementById('calculram').value = dex;
+              const equa3 = myequa.split("");
+              var y = (equa3.length+1)*2;
+              for (var f = 0; f < y; f++) {
+                var myequ1 = document.getElementById('calculram').value;
+                var dex = myequ1.replace(",", "");
+                document.getElementById('calculram').value = dex;
+              }
+              var myequ2 = document.getElementById('calculram').value;
+              document.getElementById('fx1').value = myequ2;
+            }
+            else if (activalx == 2) {
+              const myequa = document.getElementById('fx3').value;
+              const equa = myequa.split("");
+              var x = equa.length-1;
+              equa[x] = "";
+              document.getElementById('calculram').value = equa;
+              var dex = document.getElementById('calculram').value;
+              document.getElementById('calculram').value = dex;
+              const equa3 = myequa.split("");
+              var y = (equa3.length+1)*2;
+              for (var f = 0; f < y; f++) {
+                var myequ1 = document.getElementById('calculram').value;
+                var dex = myequ1.replace(",", "");
+                document.getElementById('calculram').value = dex;
+              }
+              var myequ2 = document.getElementById('calculram').value;
+              document.getElementById('fx3').value = myequ2;
+            }
+            else if (activalx == 3) {
+              const myequa = document.getElementById('fx5').value;
+              const equa = myequa.split("");
+              var x = equa.length-1;
+              equa[x] = "";
+              document.getElementById('calculram').value = equa;
+              var dex = document.getElementById('calculram').value;
+              document.getElementById('calculram').value = dex;
+              const equa3 = myequa.split("");
+              var y = (equa3.length+1)*2;
+              for (var f = 0; f < y; f++) {
+                var myequ1 = document.getElementById('calculram').value;
+                var dex = myequ1.replace(",", "");
+                document.getElementById('calculram').value = dex;
+              }
+              var myequ2 = document.getElementById('calculram').value;
+              document.getElementById('fx5').value = myequ2;
+            }
+            else if (activalx == 4) {
+              const myequa = document.getElementById('fx7').value;
+              const equa = myequa.split("");
+              var x = equa.length-1;
+              equa[x] = "";
+              document.getElementById('calculram').value = equa;
+              var dex = document.getElementById('calculram').value;
+              document.getElementById('calculram').value = dex;
+              const equa3 = myequa.split("");
+              var y = (equa3.length+1)*2;
+              for (var f = 0; f < y; f++) {
+                var myequ1 = document.getElementById('calculram').value;
+                var dex = myequ1.replace(",", "");
+                document.getElementById('calculram').value = dex;
+              }
+              var myequ2 = document.getElementById('calculram').value;
+              document.getElementById('fx7').value = myequ2;
+            }
+            else if (activalx == 5) {
+              const myequa = document.getElementById('fx9').value;
+              const equa = myequa.split("");
+              var x = equa.length-1;
+              equa[x] = "";
+              document.getElementById('calculram').value = equa;
+              var dex = document.getElementById('calculram').value;
+              document.getElementById('calculram').value = dex;
+              const equa3 = myequa.split("");
+              var y = (equa3.length+1)*2;
+              for (var f = 0; f < y; f++) {
+                var myequ1 = document.getElementById('calculram').value;
+                var dex = myequ1.replace(",", "");
+                document.getElementById('calculram').value = dex;
+              }
+              var myequ2 = document.getElementById('calculram').value;
+              document.getElementById('fx9').value = myequ2;
+            }
+          }
+        }
+    </script>
+</body>
+
+</html>
