@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;;
+}
+.unlogo {
+  position: absolute;
+  top: 1%;
+  right: 2%;
+}
+p {
+  font-size: 20px;
+}
