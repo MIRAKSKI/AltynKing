@@ -1,0 +1,1398 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title="X-O"></title>
+</head>
+<style>
+.box1{
+  background: transparent;
+  border: none;
+  position: relative;
+  width: 444px;
+  height: 444px;
+}
+.box2{
+  background: transparent;
+  border: none;
+  position: relative;
+  padding: 7px 1px;
+  width: 444px;
+  height: 445px;
+}
+.esba1{
+  background: transparent;
+  border: none;
+  width: 442px;
+  height: 144px;
+}
+.lineh{
+  background: black;
+  border: none;
+  width: 442px;
+  height: 12px;
+  -webkit-animation: colorchange 60s infinite;
+    animation: colorchange 60s infinite;
+}
+.esba2{
+  background: transparent;
+  border: none;
+  width: 134px;
+  height: 442px;
+}
+.linev{
+  background: black;
+  border: none;
+  width: 1px;
+  height: 442px;
+  -webkit-animation: colorchange 60s infinite;
+    animation: colorchange 60s infinite;
+}
+@-webkit-keyframes colorchange {
+
+     0%  {background: #33FFF3;text= "black"}
+    10%  {background: #78281F;text= "black"}
+    20%  {background: #117A65;text= "black"}
+    30%  {background: #DC7633;text= "black"}
+    40% {background: #9B59B6;text= "black"}
+    50%  {background: #23DD97;text= "black"}
+    60%  {background: #808080;text= "black"}
+    70%  {background: #93B874;text= "black"}
+    80%  {background: #C9DCB9;text= "black"}
+    90% {background: #FF0080;text= "black"}
+    100% {background: #00FFFF;text= "black"}
+}
+@keyframes colorchange {
+     0%  {background: #33FFF3;text= "black"}
+    10%  {background: #78281F;text= "black"}
+    20%  {background: #117A65;text= "black"}
+    30%  {background: #DC7633;text= "black"}
+    40% {background: #9B59B6;text= "black"}
+    50%  {background: #23DD97;text= "black"}
+    60%  {background: #808080;text= "black"}
+    70%  {background: #93B874;text= "black"}
+    80%  {background: #C9DCB9;text= "black"}
+    90% {background: #FF0080;text= "black"}
+    100% {background: #00FFFF;text= "black"}
+	}
+.box{
+  width: 445px;
+  height: 445px;
+  margin: 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;;
+}
+.box3{
+  position: fixed;
+  z-index: 1;
+  width: 443px;
+  height: 443px;
+  padding: 7px 0%;
+}
+.xob{
+  text-align: center;
+  font-size: 120px;
+  background: transparent;
+  border:none;
+  width: 32.67%;
+  height: 33.1%;
+}
+.xob:disabled{
+  text-align: center;
+  font-size: 120px;
+  color: black;
+  background: transparent;
+  border:none;
+  width: 32.67%;
+  height: 33.1%;
+}
+.xob1{
+  text-align: center;
+  font-size: 120px;
+  background: transparent;
+  border:none;
+  width: 32.67%;
+  height: 33.5%;
+}
+.xob1:disabled{
+  text-align: center;
+  font-size: 120px;
+  color: black;
+  background: transparent;
+  border:none;
+  width: 32.67%;
+  height: 33.1%;
+}
+.button9 {
+  border: none;
+  color: white;
+  padding: 16px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  width: 100%;
+}
+.button9 {
+  background-color: white;
+  color: black;
+  border: 2px solid #f44336;
+}
+.button9:hover {
+  background-color: #f44336;
+  color: white;
+}
+.container {
+  padding: 16px;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  backdrop-filter: blur(10px); /* Fallback color */
+  background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+  padding-top: 60px;
+}
+.modal-content {
+  background-color: transparent;
+  margin: 3% auto 5% auto; /* 3% from the top, 5% from the bottom and centered */
+  border: none;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 20px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2.4px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(39px);
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+.manual{
+  font-size: 16px;
+  text-align: center;
+  position: relative;
+  width: 300px;
+  padding: 105% 0px 0px 0px;
+}
+.btnholder {
+      width: 110px;height: 55px;position: absolute;top: 5px;left: 5px;
+    }
+    .button {
+      width: 45px;height: 45px;border: rgba(60, 60, 60, 0.7);border-radius: 50%;
+      background: rgba(200, 200, 200, 0.7);
+    }
+    .button:hover {
+      width: 45px;height: 45px;border: rgba(60, 60, 60, 0.7);border-radius: 50%;
+      background: rgba(220, 220, 220, 0.85);cursor: pointer;
+    }
+    @media screen and (max-width: 650px) {
+      *{
+        zoom:85%;
+      }
+    }
+</style>
+<center>
+<body>
+  <div class="box">
+  <div class="box1" style="position:fixed;">
+    <button class="esba1"></button>
+    <button class="lineh"></button>
+    <button class="esba1"></button>
+    <button class="lineh"></button>
+    <button class="esba1"></button>
+  </div>
+  <div class="box2" style="position:fixed;">
+    <button class="esba2"></button>
+    <button class="linev"></button>
+    <button class="esba2"></button>
+    <button class="linev"></button>
+    <button class="esba2"></button>
+  </div>
+  <div class="box3">
+    <input type="button" id="bot1" class="xob" onclick="a1();bb();ff();" value=" ">
+    <input type="button" id="bot2" class="xob" onclick="a2();bb();ff();" value=" ">
+    <input type="button" id="bot3" class="xob" onclick="a3();bb();ff();" value=" ">
+    <input type="button" id="bot4" class="xob1" onclick="a4();bb();ff();" value=" ">
+    <input type="button" id="bot5" class="xob1" onclick="a5();bb();ff();" value=" ">
+    <input type="button" id="bot6" class="xob1" onclick="a6();bb();ff();" value=" ">
+    <input type="button" id="bot7" class="xob" onclick="a7();bb();ff();" value=" ">
+    <input type="button" id="bot8" class="xob" onclick="a8();bb();ff();" value=" ">
+    <input type="button" id="bot9" class="xob" onclick="a9();bb();ff();" value=" ">
+  </div>
+  <div class="manual">
+    <div style="display: flex; justify-content: space-around">
+    <div>with others</div>
+    <div>
+    <label class="switch">
+    <input type="checkbox" id="myig" value="false">
+    <span class="slider round"></span>
+    </label>
+    </div>
+    <div>with computer</div>
+  </div>
+  <br>
+  <div style="display: flex; justify-content: space-around">
+  <div>you start first</div>
+  <div>
+  <label class="switch">
+  <input type="checkbox" id="myfb" value="false" onclick="aa()">
+  <span class="slider round"></span>
+  </label>
+  </div>
+  <div>computer start first</div>
+  </div>
+  <br>
+  </div>
+  </div>
+  <div id="M01" class="modal" style = "position:fixed; left:0%; top:0%; display:none;">
+  <div id="M02" class="modal-content animate" style = "position:fixed; left:25%; top:30%; display:none;">
+    <div class="container">
+
+      <div id="idyou"><h1><b> Player X win </b></h1></div>
+      <div id="idcom"><h1><b> Player O win </b></h1></div>
+      <div id="N01"><h1><b> no one wins </b></h1></div>
+
+      <input type="button" class="button button9" onclick="bc('=')" value="play agian">
+  </div>
+  </div>
+  <div style="display:none;">
+    <input type="text" id="tx1" value="X">
+    <input type="text" id="tx2" value="O">
+    <input type="text" id="tx3" value=" ">
+    <input type="button" id="com" onclick="aa()">
+    <input type="button" id="co2" onclick="dd()">
+    <input type="button" id="comwin" onclick="cc()">
+    <input type="button" id="complay" onclick="ff()">
+    <input type="button" id="complay2" onclick="gg()">
+  </div>
+  <script>
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ 			document.body.style.zoom="150%";
+		}
+  flag = 1;
+  function a1(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+        if (flag == 1) {
+          document.getElementById('bot1').value = "X";
+          document.getElementById("bot1").disabled = true;
+          flag = 0;
+        }
+        else {
+          document.getElementById('bot1').value = "O";
+          document.getElementById("bot1").disabled = true;
+          flag = 1;
+        }
+      }
+      else {
+        document.getElementById('bot1').value = "X";
+        document.getElementById("bot1").disabled = true;
+      }
+  }
+  function a2(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+        if (flag == 1) {
+          document.getElementById('bot2').value = "X";
+          document.getElementById("bot2").disabled = true;
+          flag = 0;
+        }
+        else {
+          document.getElementById('bot2').value = "O";
+          document.getElementById("bot2").disabled = true;
+          flag = 1;
+        }
+        }
+    else {
+      document.getElementById('bot2').value = "X";
+      document.getElementById("bot2").disabled = true;
+    }
+  }
+  function a3(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+        if (flag == 1) {
+          document.getElementById('bot3').value = "X";
+          document.getElementById("bot3").disabled = true;
+          flag = 0;
+        }
+        else {
+          document.getElementById('bot3').value = "O";
+          document.getElementById("bot3").disabled = true;
+          flag = 1;
+        }
+        }
+    else {
+      document.getElementById('bot3').value = "X";
+      document.getElementById("bot3").disabled = true;
+    }
+  }
+  function a4(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+        if (flag == 1) {
+          document.getElementById('bot4').value = "X";
+          document.getElementById("bot4").disabled = true;
+          flag = 0;
+        }
+        else {
+          document.getElementById('bot4').value = "O";
+          document.getElementById("bot4").disabled = true;
+          flag = 1;
+        }
+        }
+    else {
+      document.getElementById('bot4').value = "X";
+      document.getElementById("bot4").disabled = true;
+    }
+  }
+  function a5(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+        if (flag == 1) {
+          document.getElementById('bot5').value = "X";
+          document.getElementById("bot5").disabled = true;
+          flag = 0;
+        }
+        else {
+          document.getElementById('bot5').value = "O";
+          document.getElementById("bot5").disabled = true;
+          flag = 1;
+        }
+        }
+    else {
+      document.getElementById('bot5').value = "X";
+      document.getElementById("bot5").disabled = true;
+    }
+  }
+  function a6(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+    if (flag == 1) {
+      document.getElementById('bot6').value = "X";
+      document.getElementById("bot6").disabled = true;
+      flag = 0;
+    }
+    else {
+      document.getElementById('bot6').value = "O";
+      document.getElementById("bot6").disabled = true;
+      flag = 1;
+    }
+    }
+    else {
+      document.getElementById('bot6').value = "X";
+      document.getElementById("bot6").disabled = true;
+    }
+  }
+  function a7(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+    if (flag == 1) {
+      document.getElementById('bot7').value = "X";
+      document.getElementById("bot7").disabled = true;
+      flag = 0;
+    }
+    else {
+      document.getElementById('bot7').value = "O";
+      document.getElementById("bot7").disabled = true;
+      flag = 1;
+    }
+    }
+    else {
+      document.getElementById('bot7').value = "X";
+      document.getElementById("bot7").disabled = true;
+    }
+  }
+  function a8(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+    if (flag == 1) {
+      document.getElementById('bot8').value = "X";
+      document.getElementById("bot8").disabled = true;
+      flag = 0;
+    }
+    else {
+      document.getElementById('bot8').value = "O";
+      document.getElementById("bot8").disabled = true;
+      flag = 1;
+    }
+    }
+    else {
+      document.getElementById('bot8').value = "X";
+      document.getElementById("bot8").disabled = true;
+    }
+  }
+  function a9(){
+    var checkBox = document.getElementById('myig');
+    if (checkBox.checked == false) {
+    if (flag == 1) {
+      document.getElementById('bot9').value = "X";
+      document.getElementById("bot9").disabled = true;
+      flag = 0;
+    }
+    else {
+      document.getElementById('bot9').value = "O";
+      document.getElementById("bot9").disabled = true;
+      flag = 1;
+    }
+    }
+    else {
+      document.getElementById('bot9').value = "X";
+      document.getElementById("bot9").disabled = true;
+    }
+  }
+
+  function bb(){
+    var bot1 = document.getElementById('bot1').value;
+    var bot2 = document.getElementById('bot2').value;
+    var bot3 = document.getElementById('bot3').value;
+    var bot4 = document.getElementById('bot4').value;
+    var bot5 = document.getElementById('bot5').value;
+    var bot6 = document.getElementById('bot6').value;
+    var bot7 = document.getElementById('bot7').value;
+    var bot8 = document.getElementById('bot8').value;
+    var bot9 = document.getElementById('bot9').value;
+    var tx1 = document.getElementById('tx1').value;
+    var tx2 = document.getElementById('tx2').value;
+    var tx3 = document.getElementById('tx3').value;
+    var m01 = document.getElementById('M01');
+    var m02 = document.getElementById('M02');
+    var n01 = document.getElementById('N01');
+    var you = document.getElementById('idyou');
+    var com = document.getElementById('idcom');
+    var checkBox = document.getElementById('myig');
+    var go =0;
+      if (bot1 == tx1){
+        if (bot1 == bot2 && bot2 == bot3){
+          go=1;
+        }
+        if (bot1 == bot4 && bot4 == bot7){
+          go=1;
+        }
+        }
+        else if (bot1 == tx2) {
+          if (bot1 == bot2 && bot2 == bot3){
+            go=2;
+          }
+          if (bot1 == bot4 && bot4 == bot7){
+            go=2;
+          }
+        }
+        else {
+        // do nothing
+      }
+      if (bot5 == tx1){
+        if (bot5==bot2 && bot2==bot8){
+          go=1;
+        }
+        if (bot5==bot4 && bot4==bot6){
+          go=1;
+        }
+        if (bot5==bot1 && bot1==bot9){
+          go=1;
+        }
+        if (bot5==bot3 && bot3==bot7){
+          go=1;
+        }
+        }
+        else if (bot5 == tx2) {
+          if (bot5==bot2 && bot2==bot8){
+            go=2;
+          }
+          if (bot5==bot4 && bot4==bot6){
+            go=2;
+          }
+          if (bot5==bot1 && bot1==bot9){
+            go=2;
+          }
+          if (bot5==bot3 && bot3==bot7){
+            go=2;
+          }
+        }
+        else {
+        // do nothing
+      }
+      if (bot9 == tx1){
+        if (bot9 == bot8 && bot8 == bot7){
+          go=1;
+        }
+        if (bot9 == bot6 && bot6 == bot3){
+          go=1;
+        }
+        }
+        else if (bot9 == tx2) {
+          if (bot9 == bot8 && bot8 == bot7){
+            go=2;
+          }
+          if (bot9 == bot6 && bot6 == bot3){
+            go=2;
+          }
+        }
+        else {
+        // do nothing
+      }
+      if (go == 1){
+        m01.style.display = "block";
+        m02.style.display = "block";
+        you.style.display = "block";
+        com.style.display = "none";
+        n01.style.display = "none";
+        }
+        else if (go == 2) {
+          m01.style.display = "block";
+          m02.style.display = "block";
+          you.style.display = "none";
+          com.style.display = "block";
+          n01.style.display = "none";
+        }
+        else if (bot1!=" "&&bot2!=" "&&bot3!=" "&&bot4!=" "&&bot5!=" "&&bot6!=" "&&bot7!=" "&&bot8!=" "&&bot9!=" "){
+          m01.style.display = "block";
+          m02.style.display = "block";
+          you.style.display = "none";
+          com.style.display = "none";
+          n01.style.display = "block";
+        } else {
+          document.getElementById('com').click();
+        }
+
+  }
+  function bc(){
+    var bot1 = document.getElementById('bot1').value;
+    var bot2 = document.getElementById('bot2').value;
+    var bot3 = document.getElementById('bot3').value;
+    var bot4 = document.getElementById('bot4').value;
+    var bot5 = document.getElementById('bot5').value;
+    var bot6 = document.getElementById('bot6').value;
+    var bot7 = document.getElementById('bot7').value;
+    var bot8 = document.getElementById('bot8').value;
+    var bot9 = document.getElementById('bot9').value;
+    var tx3 = document.getElementById('tx3').value;
+    var m01 = document.getElementById('M01');
+    var n01 = document.getElementById('N01');
+    var m02 = document.getElementById('M02');
+    var you = document.getElementById('idyou');
+    var com1 = document.getElementById('idcom');
+    var seccom = document.getElementById('myfb');
+    document.getElementById('bot1').value = tx3;
+    document.getElementById('bot2').value = tx3;
+    document.getElementById('bot3').value = tx3;
+    document.getElementById('bot4').value = tx3;
+    document.getElementById('bot5').value = tx3;
+    document.getElementById('bot6').value = tx3;
+    document.getElementById('bot7').value = tx3;
+    document.getElementById('bot8').value = tx3;
+    document.getElementById('bot9').value = tx3;
+    document.getElementById('bot1').disabled = false;
+    document.getElementById('bot2').disabled = false;
+    document.getElementById('bot3').disabled = false;
+    document.getElementById('bot4').disabled = false;
+    document.getElementById('bot5').disabled = false;
+    document.getElementById('bot6').disabled = false;
+    document.getElementById('bot7').disabled = false;
+    document.getElementById('bot8').disabled = false;
+    document.getElementById('bot9').disabled = false;
+    m01.style.display = "none";
+    m02.style.display = "none";
+    you.style.display = "none"
+    com1.style.display = "none"
+    n01.style.display = "none"
+    flag =1;
+    if (seccom.checked == true){
+    document.getElementById('com').click();
+    } else {
+      // do nothing
+    }
+  }
+
+  function aa(){
+    var bot1 = document.getElementById('bot1').value;
+    var bot2 = document.getElementById('bot2').value;
+    var bot3 = document.getElementById('bot3').value;
+    var bot4 = document.getElementById('bot4').value;
+    var bot5 = document.getElementById('bot5').value;
+    var bot6 = document.getElementById('bot6').value;
+    var bot7 = document.getElementById('bot7').value;
+    var bot8 = document.getElementById('bot8').value;
+    var bot9 = document.getElementById('bot9').value;
+    var tx1 = document.getElementById('tx1').value;
+    var tx2 = document.getElementById('tx2').value;
+    var tx3 = document.getElementById('tx3').value;
+    var m01 = document.getElementById('M01');
+    var m02 = document.getElementById('M02');
+    var you = document.getElementById('idyou');
+    var com1 = document.getElementById('idcom');
+    var checkBox = document.getElementById('myig');
+    var seccom = document.getElementById('myfb');
+    if (checkBox.checked == true) {
+    if (seccom.checked == true) {
+    let Y = Math.floor((Math.random() * 9) + 1);
+    if (Y==1){
+      if (bot1 == " "){
+      document.getElementById('bot1').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y==2){
+      if (bot2 == " "){
+      document.getElementById('bot2').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y==3){
+      if (bot3 == " "){
+      document.getElementById('bot3').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y==4){
+      if (bot4 == " "){
+      document.getElementById('bot4').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y==5){
+      if (bot5 == " "){
+      document.getElementById('bot5').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y==6){
+      if (bot6 == " "){
+      document.getElementById('bot6').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y==7){
+      if (bot7 == " "){
+      document.getElementById('bot7').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y==8){
+      if (bot8 == " "){
+      document.getElementById('bot8').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y==9){
+      if (bot9 == " "){
+      document.getElementById('bot9').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('co2').click();
+          }
+    }
+    else if (Y == 0 || Y == 10) {
+        document.getElementById('co2').click();
+      } else {
+        document.getElementById('co2').click();
+    }
+    document.getElementById('comwin').click();
+    } else {
+    // do nothing
+    }
+    } else {
+      //do nothing
+    }
+  }
+
+  function dd(){
+    var bot1 = document.getElementById('bot1').value;
+    var bot2 = document.getElementById('bot2').value;
+    var bot3 = document.getElementById('bot3').value;
+    var bot4 = document.getElementById('bot4').value;
+    var bot5 = document.getElementById('bot5').value;
+    var bot6 = document.getElementById('bot6').value;
+    var bot7 = document.getElementById('bot7').value;
+    var bot8 = document.getElementById('bot8').value;
+    var bot9 = document.getElementById('bot9').value;
+    var tx1 = document.getElementById('tx1').value;
+    var tx2 = document.getElementById('tx2').value;
+    var tx3 = document.getElementById('tx3').value;
+    var m01 = document.getElementById('M01');
+    var m02 = document.getElementById('M02');
+    var you = document.getElementById('idyou');
+    var com1 = document.getElementById('idcom');
+    var checkBox = document.getElementById('myig');
+    var seccom = document.getElementById('myfb');
+    let X = Math.floor((Math.random() * 9) + 1);
+    if (checkBox.checked == true) {
+    if (seccom.checked == true) {
+    for (let i = 0; i < 10; i++) {
+    if (X==1){
+      if (bot1 == " "){
+      document.getElementById('bot1').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X==2){
+      if (bot2 == " "){
+      document.getElementById('bot2').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X==3){
+      if (bot3 == " "){
+      document.getElementById('bot3').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X==4){
+      if (bot4 == " "){
+      document.getElementById('bot4').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X==5){
+      if (bot5 == " "){
+      document.getElementById('bot5').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X==6){
+      if (bot6 == " "){
+      document.getElementById('bot6').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X==7){
+      if (bot7 == " "){
+      document.getElementById('bot7').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X==8){
+      if (bot8 == " "){
+      document.getElementById('bot8').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X==9){
+      if (bot9 == " "){
+      document.getElementById('bot9').value = tx2
+      } else {
+        X = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('com').click();
+          }
+    }
+    else if (X == 0 || X == 10) {
+        document.getElementById('com').click();
+      } else {
+        document.getElementById('com').click();
+    }
+    document.getElementById('comwin').click();
+    }} else {
+    // do nothing
+    }
+    } else {
+      //do nothing
+    }
+  }
+
+  function ff(){
+    var bot1 = document.getElementById('bot1').value;
+    var bot2 = document.getElementById('bot2').value;
+    var bot3 = document.getElementById('bot3').value;
+    var bot4 = document.getElementById('bot4').value;
+    var bot5 = document.getElementById('bot5').value;
+    var bot6 = document.getElementById('bot6').value;
+    var bot7 = document.getElementById('bot7').value;
+    var bot8 = document.getElementById('bot8').value;
+    var bot9 = document.getElementById('bot9').value;
+    var tx1 = document.getElementById('tx1').value;
+    var tx2 = document.getElementById('tx2').value;
+    var tx3 = document.getElementById('tx3').value;
+    var m01 = document.getElementById('M01');
+    var m02 = document.getElementById('M02');
+    var you = document.getElementById('idyou');
+    var com1 = document.getElementById('idcom');
+    var checkBox = document.getElementById('myig');
+    var seccom = document.getElementById('myfb');
+    var go=0;
+    let Y = Math.floor((Math.random() * 9) + 1);
+     if (bot1 == tx1){
+       if (bot1 == bot2 && bot2 == bot3){
+         go=1;
+       }
+       if (bot1 == bot4 && bot4 == bot7){
+         go=1;
+       }
+       } else {
+       // do nothing
+     }
+     if (bot5 == tx1){
+       if (bot5==bot2 && bot2==bot8){
+         go=1;
+       }
+       if (bot5==bot4 && bot4==bot6){
+         go=1;
+       }
+       if (bot5==bot1 && bot1==bot9){
+         go=1;
+       }
+       if (bot5==bot3 && bot3==bot7){
+         go=1;
+       }
+       } else {
+       // do nothing
+     }
+     if (bot9 == tx1){
+       if (bot9 == bot8 && bot8 == bot7){
+         go=1;
+       }
+       if (bot9 == bot6 && bot6 == bot3){
+         go=1;
+       }
+       } else {
+       // do nothing
+     }
+    if (go == 0){
+    if (checkBox.checked == true) {
+    if (seccom.checked == false) {
+    if (Y==1){
+      if (bot1 == " "){
+      document.getElementById('bot1').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y==2){
+      if (bot2 == " "){
+      document.getElementById('bot2').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y==3){
+      if (bot3 == " "){
+      document.getElementById('bot3').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y==4){
+      if (bot4 == " "){
+      document.getElementById('bot4').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y==5){
+      if (bot5 == " "){
+      document.getElementById('bot5').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y==6){
+      if (bot6 == " "){
+      document.getElementById('bot6').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y==7){
+      if (bot7 == " "){
+      document.getElementById('bot7').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y==8){
+      if (bot8 == " "){
+      document.getElementById('bot8').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y==9){
+      if (bot9 == " "){
+      document.getElementById('bot9').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay2').click();
+          }
+    }
+    else if (Y == 0 || Y == 10) {
+        document.getElementById('complay2').click();
+      } else {
+        document.getElementById('complay2').click();
+    }
+    document.getElementById('comwin').click();
+    }}} else {
+    // do nothing
+    }
+  }
+
+  function gg(){
+    var bot1 = document.getElementById('bot1').value;
+    var bot2 = document.getElementById('bot2').value;
+    var bot3 = document.getElementById('bot3').value;
+    var bot4 = document.getElementById('bot4').value;
+    var bot5 = document.getElementById('bot5').value;
+    var bot6 = document.getElementById('bot6').value;
+    var bot7 = document.getElementById('bot7').value;
+    var bot8 = document.getElementById('bot8').value;
+    var bot9 = document.getElementById('bot9').value;
+    var tx1 = document.getElementById('tx1').value;
+    var tx2 = document.getElementById('tx2').value;
+    var tx3 = document.getElementById('tx3').value;
+    var m01 = document.getElementById('M01');
+    var m02 = document.getElementById('M02');
+    var you = document.getElementById('idyou');
+    var com1 = document.getElementById('idcom');
+    var checkBox = document.getElementById('myig');
+    var seccom = document.getElementById('myfb');
+    let Y = Math.floor((Math.random() * 9) + 1);
+    if (checkBox.checked == true) {
+    if (seccom.checked == false) {
+    if (Y==1){
+      if (bot1 == " "){
+      document.getElementById('bot1').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y==2){
+      if (bot2 == " "){
+      document.getElementById('bot2').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y==3){
+      if (bot3 == " "){
+      document.getElementById('bot3').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y==4){
+      if (bot4 == " "){
+      document.getElementById('bot4').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y==5){
+      if (bot5 == " "){
+      document.getElementById('bot5').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y==6){
+      if (bot6 == " "){
+      document.getElementById('bot6').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y==7){
+      if (bot7 == " "){
+      document.getElementById('bot7').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y==8){
+      if (bot8 == " "){
+      document.getElementById('bot8').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y==9){
+      if (bot9 == " "){
+      document.getElementById('bot9').value = tx2
+      } else {
+        Y = Math.floor((Math.random() * 9) + 1);
+            document.getElementById('complay').click();
+          }
+    }
+    else if (Y == 0 || Y == 10) {
+        document.getElementById('complay').click();
+      } else {
+        document.getElementById('complay').click();
+    }
+    document.getElementById('comwin').click();
+    }}
+
+  }
+
+  function cc(){
+      var bot1 = document.getElementById('bot1').value;
+      var bot2 = document.getElementById('bot2').value;
+      var bot3 = document.getElementById('bot3').value;
+      var bot4 = document.getElementById('bot4').value;
+      var bot5 = document.getElementById('bot5').value;
+      var bot6 = document.getElementById('bot6').value;
+      var bot7 = document.getElementById('bot7').value;
+      var bot8 = document.getElementById('bot8').value;
+      var bot9 = document.getElementById('bot9').value;
+      var tx1 = document.getElementById('tx1').value;
+      var tx2 = document.getElementById('tx2').value;
+      var tx3 = document.getElementById('tx3').value;
+      var m01 = document.getElementById('M01');
+      var m02 = document.getElementById('M02');
+      var n01 = document.getElementById('N01');
+      var you = document.getElementById('idyou');
+      var com1 = document.getElementById('idcom');
+      var go=0;
+      if (bot1 == tx2){
+        if (bot1 == bot2 && bot2 == bot3){
+          go=2;
+        }
+        if (bot1 == bot4 && bot4 == bot7){
+          go=2;
+        }
+        } else {
+        // do nothing
+      }
+      if (bot5 == tx2){
+        if (bot5==bot2 && bot2==bot8){
+          go=2;
+        }
+        if (bot5==bot4 && bot4==bot6){
+          go=2;
+        }
+        if (bot5==bot1 && bot1==bot9){
+          go=2;
+        }
+        if (bot5==bot3 && bot3==bot7){
+          go=2;
+        }
+        } else {
+        // do nothing
+      }
+      if (bot9 == tx2){
+        if (bot9 == bot8 && bot8 == bot7){
+          go=2;
+        }
+        if (bot9 == bot6 && bot6 == bot3){
+          go=2;
+        }
+        } else {
+        // do nothing
+      }
+      if (go == 2){
+        m01.style.display = "block";
+        m02.style.display = "block";
+        you.style.display = "none";
+        com1.style.display = "block";
+        n01.style.display = "none";
+        }
+      else if (bot1!=" "&&bot2!=" "&&bot3!=" "&&bot4!=" "&&bot5!=" "&&bot6!=" "&&bot7!=" "&&bot8!=" "&&bot9!=" "){
+            m01.style.display = "block";
+            m02.style.display = "block";
+            you.style.display = "none";
+            com1.style.display = "none";
+            n01.style.display = "block";
+        } else {
+        // do nothing
+      }
+  }
+
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "1") {
+    event.preventDefault();
+    document.getElementById("bot7").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "2") {
+    event.preventDefault();
+    document.getElementById("bot8").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "3") {
+    event.preventDefault();
+    document.getElementById("bot9").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "4") {
+    event.preventDefault();
+    document.getElementById("bot4").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "5") {
+    event.preventDefault();
+    document.getElementById("bot5").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "6") {
+    event.preventDefault();
+    document.getElementById("bot6").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "7") {
+    event.preventDefault();
+    document.getElementById("bot1").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "8") {
+    event.preventDefault();
+    document.getElementById("bot2").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "9") {
+    event.preventDefault();
+    document.getElementById("bot3").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "0") {
+      var tx3 = document.getElementById('tx3').value;
+      var seccom = document.getElementById('myfb');
+    event.preventDefault();
+    document.getElementById('bot1').value = tx3;
+    document.getElementById('bot2').value = tx3;
+    document.getElementById('bot3').value = tx3;
+    document.getElementById('bot4').value = tx3;
+    document.getElementById('bot5').value = tx3;
+    document.getElementById('bot6').value = tx3;
+    document.getElementById('bot7').value = tx3;
+    document.getElementById('bot8').value = tx3;
+    document.getElementById('bot9').value = tx3;
+    document.getElementById('bot1').disabled = false;
+    document.getElementById('bot2').disabled = false;
+    document.getElementById('bot3').disabled = false;
+    document.getElementById('bot4').disabled = false;
+    document.getElementById('bot5').disabled = false;
+    document.getElementById('bot6').disabled = false;
+    document.getElementById('bot7').disabled = false;
+    document.getElementById('bot8').disabled = false;
+    document.getElementById('bot9').disabled = false;
+    flag=1;
+    if (seccom.checked == true){
+    document.getElementById('com').click();
+    } else {
+      // do nothing
+    }
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "r") {
+    event.preventDefault();
+    document.getElementById("com").click();
+    document.getElementById("complay").click();
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "a") {
+      var tx3 = document.getElementById('tx3').value;
+      var seccom = document.getElementById('myfb');
+    event.preventDefault();
+    document.getElementById('bot1').value = "K"
+    document.getElementById('bot2').value = "A"
+    document.getElementById('bot3').value = "R"
+    document.getElementById('bot4').value = "I"
+    document.getElementById('bot5').value = "M"
+    document.getElementById('bot6').value = " "
+    document.getElementById('bot7').value = " "
+    document.getElementById('bot8').value = " "
+    document.getElementById('bot9').value = " "
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "h") {
+      var tx3 = document.getElementById('tx3').value;
+      var seccom = document.getElementById('myfb');
+    event.preventDefault();
+    document.getElementById('bot1').value = "H"
+    document.getElementById('bot2').value = "I"
+    document.getElementById('bot3').value = "C"
+    document.getElementById('bot4').value = "H"
+    document.getElementById('bot5').value = "A"
+    document.getElementById('bot6').value = "M"
+    document.getElementById('bot7').value = " "
+    document.getElementById('bot8').value = " "
+    document.getElementById('bot9').value = " "
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "R") {
+      var tx3 = document.getElementById('tx3').value;
+      var seccom = document.getElementById('myfb');
+    event.preventDefault();
+    document.getElementById('bot1').value = "R"
+    document.getElementById('bot2').value = "O"
+    document.getElementById('bot3').value = "K"
+    document.getElementById('bot4').value = "A"
+    document.getElementById('bot5').value = "Y"
+    document.getElementById('bot6').value = "A"
+    document.getElementById('bot7').value = " "
+    document.getElementById('bot8').value = " "
+    document.getElementById('bot9').value = " "
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "k") {
+      var tx3 = document.getElementById('tx3').value;
+      var seccom = document.getElementById('myfb');
+    event.preventDefault();
+    document.getElementById('bot1').value = "K"
+    document.getElementById('bot2').value = "A"
+    document.getElementById('bot3').value = "O"
+    document.getElementById('bot4').value = "U"
+    document.getElementById('bot5').value = "T"
+    document.getElementById('bot6').value = "H"
+    document.getElementById('bot7').value = "E"
+    document.getElementById('bot8').value = "R"
+    document.getElementById('bot9').value = " "
+    }
+  });
+  document.addEventListener("keypress", function(event) {
+    if (event.key === "w") {
+      var tx3 = document.getElementById('tx3').value;
+      var seccom = document.getElementById('myfb');
+    event.preventDefault();
+    document.getElementById('bot1').value = "W"
+    document.getElementById('bot2').value = "I"
+    document.getElementById('bot3').value = "S"
+    document.getElementById('bot4').value = "S"
+    document.getElementById('bot5').value = "A"
+    document.getElementById('bot6').value = "L"
+    document.getElementById('bot7').value = " "
+    document.getElementById('bot8').value = " "
+    document.getElementById('bot9').value = " "
+    }
+  });
+  </script>
+</body>
+</center>
+</html>

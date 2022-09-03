@@ -1,0 +1,111 @@
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.btnholder {
+      width: 110px;height: 55px;position: absolute;top: 5px;left: 5px;
+    }
+    .button {
+      width: 45px;height: 45px;border: rgba(60, 60, 60, 0.7);border-radius: 50%;
+      background: rgba(200, 200, 200, 0.7);
+    }
+    .button:hover {
+      width: 45px;height: 45px;border: rgba(60, 60, 60, 0.7);border-radius: 50%;
+      background: rgba(220, 220, 220, 0.85);cursor: pointer;
+    }
+body{
+  -webkit-animation: colorchange 60s infinite;
+  animation: colorchange 60s infinite;
+}
+@-webkit-keyframes colorchange {
+
+     0%  {background: #33FFF3;text= "black"}
+    10%  {background: #78281F;text= "black"}
+    20%  {background: #117A65;text= "black"}
+    30%  {background: #DC7633;text= "black"}
+    40% {background: #9B59B6;text= "black"}
+    50%  {background: #23DD97;text= "black"}
+    60%  {background: #808080;text= "black"}
+    70%  {background: #93B874;text= "black"}
+    80%  {background: #C9DCB9;text= "black"}
+    90% {background: #FF0080;text= "black"}
+    100% {background: #00FFFF;text= "black"}
+}
+@keyframes colorchange {
+     0%  {background: #33FFF3;text= "black"}
+    10%  {background: #78281F;text= "black"}
+    20%  {background: #117A65;text= "black"}
+    30%  {background: #DC7633;text= "black"}
+    40% {background: #9B59B6;text= "black"}
+    50%  {background: #23DD97;text= "black"}
+    60%  {background: #808080;text= "black"}
+    70%  {background: #93B874;text= "black"}
+    80%  {background: #C9DCB9;text= "black"}
+    90% {background: #FF0080;text= "black"}
+    100% {background: #00FFFF;text= "black"}
+	}
+.container{
+    width: 45%;
+    min-width: 500px;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+.scores{
+    margin-bottom: 50px;
+    text-align: right;
+}
+.weapons{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.weapons button{
+    background-color: #ffd51b;
+    color: #000000;
+    border: none;
+    font-size: 50px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+.details{
+    margin-top: 30px;
+    text-align: center;
+}
+.scores,.details{
+    font-family: 'Poppins',sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+}
+#result{
+    width: 180px;
+    padding: 10px 0;
+    margin: 30px auto;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+#user_choice,
+#computer_choice{
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+span{
+    font-weight: 600;
+}
+@media screen and (max-width: 650px) {
+  *{
+    zoom:80%;
+  }
+}
