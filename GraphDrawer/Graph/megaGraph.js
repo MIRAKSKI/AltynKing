@@ -38,7 +38,7 @@ function numb() {
   var KYP = OY+LX+5;
   var NKXP = OX-LX;
   var NKYP = OY-LX;
-  for (var i = 0; i < 15; i++) {
+  for (var i = 0; i < 70; i++) {
     ConTextX.moveTo(KX,OY-3);
     ConTextX.lineTo(KX,OY+3);
     ConTextX.lineWidth = 0.02;

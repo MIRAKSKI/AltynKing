@@ -1,6 +1,10 @@
 body {
   width: 100%;height: 100%;position: relative;overflow: hidden;margin: 0;
 }
+.table {
+  position: absolute;top: 50%;left: 50%;transform: translate(-50%,-35%);display: block;
+  width: 50%;height: 100%;
+}
 .CanvasX {
   width: 100%; height: 100%;position: absolute;display: block;z-index: 2;
   top: 0;bottom: 0;left: 0;right: 0;
@@ -13,7 +17,7 @@ body {
   width: 100%; height: 100%;position: absolute;display: block;z-index: 1;
 }
 .user {
-  position: absolute;top: 0;left: 0;z-index: 5;display: flex;width: 156px;height: 30px;margin: 0.354rem;
+  position: absolute;top: 0;left: 0;z-index: 5;display: flex;width: 9.75rem;height: 1.875rem;margin: 0.354rem;
 }
 .user input[type="text"] {
   margin: 0 0.1872rem 0 0.1872rem;width: 6.25rem;height: 100%;border: 0.0625rem solid red;background: white;border-radius: 0.25rem;
@@ -27,9 +31,26 @@ body {
   background: red;color: white;
 }
 .feuter {
-  width: 100%;height: 100%;overflow: auto;z-index: 4;background: rgba(0, 0, 0, 0.4);backdrop-filter: blur(15px);
-  align-items: center;justify-content: center;align-content: center;
+  width: 100%;height: 50rem;overflow: auto;z-index: 4;background: rgba(0, 0, 0, 0.4);backdrop-filter: blur(5px);
+  align-items: center;justify-content: center;align-content: center;position: relative;display: block;
 }
 p {
   align-self: center;align-content: center;text-align: center;font-size: 1.25rem;
+}
+@media screen and (max-width:670px) {
+  .feuter {
+    width: 100%;height: 80rem;overflow: auto;z-index: 4;background: rgba(0, 0, 0, 0.4);backdrop-filter: blur(5px);
+    align-items: center;justify-content: center;align-content: center;position: relative;display: block;
+  }
+  .user {
+    position: absolute;top: 0;left: 0;z-index: 5;display: flex;width: 9.75rem;height: 1.255rem;margin: 0.354rem;
+  }
+  .user input[type="text"] {
+    margin: 0 0.1872rem 0 0.1872rem;width: 3.5rem;height: 100%;border: 0.0625rem solid red;background: white;border-radius: 0.25rem;
+    padding: 0 0.1252rem;font-size: 0.5rem;
+  }
+  .user input[type="button"] {
+    margin: 0 0.1872rem 0 0.1872rem;width: 1.625rem;height: 110%;border: 0.0625rem solid red;background: white;border-radius: 0.25rem;
+    padding: 0.125rem 0.1252rem;font-size: 0.5rem;
+  }
 }
