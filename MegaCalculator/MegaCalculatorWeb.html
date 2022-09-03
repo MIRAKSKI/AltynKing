@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Mega Calculator Web | AltynKing</title>
     <meta charset="utf-8">
-    <link rel="icon" type="image/x-icon" href="../img/akn.png">
     <style>
-    body {
-      margin: 0px;padding: 0px;vertical-align: middle;align-items: center;
-      width: 100%;height: 100%;overflow: hidden;
-      position: relative;
-    }
     .holder {
       position: relative;
       align-content: space-around;
-      width: 100%;
-      height: 90%;
+      width: 695px;
+      height: 86%;
       display:flex;
-      margin: 1% 0 1% 0;
+      margin: 0.75%;
     }
     #shm1 {
       animation-name: opendown;animation-duration: 0.3s;
@@ -31,19 +24,19 @@
     #answer {
       position: relative;
       align-content: space-around;
-      width: 100%;
-      height: 17%;
+      width: 700px;
+      height: 71px;
       display:flex;
       margin: 2px;
     }
     #result {
-      width: 100%;
+      width: 690px;
       height: 52px;
       display: block;
       border: 1px solid black;
       align-items: center;
       align-content: center;
-      align-self: auto;color: black;
+      align-self: auto;
       margin: 2px 2px 2px 2px;
       background-color: white;
       font-size: 22px;
@@ -54,15 +47,15 @@
     }
     #calcu {
       border: none;
-      width: 98%;padding: 0px;margin: 0px;
-      height: 100%;border-radius: 5px;
+      width: 703px;padding: 0px;margin: 0px;
+      height: 407px;border-radius: 5px;
       background-color: rgba(255, 255, 255, 0.09);
-      backdrop-filter:blur(15px);
-      margin-left: auto;margin-right: auto;
+      backdrop-filter:blur(15px);vertical-align: middle;
+      margin-left: auto;margin-right: auto;margin-top: 11%;
     }
     .keyholder {
       width: 100%;
-      height: 100%;
+      height: 329px;
       display: grid;
     }
     .add2 {
@@ -80,15 +73,15 @@
         border-radius: 5px;
         display: inline;
     }
-    .add2:active {
+    .add2:hover {
         background-color: rgba(0,255,0,1);
         color: black;
         cursor: pointer;
     }
     #secsol {
       position: absolute;
-      background: transparent;top: 52%;left: 8px;
-      border: none;height: 48%;width: 85%;overflow: hidden;
+      background: transparent;top: 51px;left: 8px;
+      border: none;height: 22px;width: 600px;overflow: hidden;
       margin: 0px;padding: 0px 5px;overflow: hidden;
       z-index: 4;color: rgba(100, 100, 100, 1);
     }
@@ -107,7 +100,7 @@
         border-radius: 5px;
         display: inline;animation-name: openleft;animation-duration: 0.3s;
     }
-    .add1:active {
+    .add1:hover {
         background-color: rgba(100,100,100,0.7);
         color: white;
         cursor: pointer;
@@ -127,7 +120,7 @@
         border-radius: 5px;
         display: block;
     }
-    .add11:active {
+    .add11:hover {
         background-color: rgba(100,100,100,0.7);
         color: white;
         cursor: pointer;
@@ -151,36 +144,36 @@
       border-radius: 5px;
       display: inline;
     }
-    .fx:active {
+    .fx:hover {
         background-color: rgba(0,200,0,0.7);
         color: white;
         cursor: pointer;
     }
     .deg {
-      position: absolute;right: 19px;bottom: 20%;
+      position: absolute;right: 19px;bottom: 10px;
       width: 7px;height: 7px;padding: 0px;
       margin: 0px;color: black;font-size: 18px;
     }
     .answer {
       position: relative;
       align-content: space-around;
-      width: 99%; border: 1px solid black;
-      height: 13%;border-radius: 5px;
+      width: 700px; border: 1px solid black;
+      height: 56px;border-radius: 5px;
       display:flex;
       margin: 2px;
     }
     .calcu {
       border: none;
-      width: 100%;padding: 0px;margin: 0px;
+      width: 703px;padding: 0px;margin: 0px;
       background-color: white;
-      height: 100%;border-radius: 5px;
+      height: 407px;border-radius: 5px;
       background-color: rgba(255, 255, 255, 0.09);
       backdrop-filter:blur(15px);vertical-align: middle;
-      margin-left: auto;margin-right: auto;margin-top: 0%;
+      margin-left: auto;margin-right: auto;margin-top: 11%;
     }
     .result {
       width: 100%;
-      height: 52%;
+      height: 37px;
       display: inline;border: none;
       align-items: center;background: transparent;
       align-content: center;
@@ -205,6 +198,7 @@
       padding: 0px 5px 5px 5px;
       font-weight: bold;
       border-radius: 5px;overflow: hidden;
+      overflow: hidden;overflow-x: scroll;
       border: 0.5px solid rgba(100, 100, 100, 0.5);
     }
     .result12 {
@@ -222,7 +216,7 @@
       overflow: hidden;overflow-x: scroll;
     }
     .result13 {
-      width: 11%;
+      width: 80px;
       height: 37px;
       display: inline;border: none;
       align-items: center;background: transparent;
@@ -240,9 +234,10 @@
       align-items: center;align-content: center;align-self: auto;
       margin: 6px 10px 2px 10px;  background-color: white;
       font-size: 22px;text-align: center;
-      padding: 0px 5px 5px 5px;color: black;
+      padding: 0px 5px 5px 5px;
       font-weight: bold; animation: scroll-left 15s linear infinite;
-      border-radius: 5px;overflow: auto;border: none;
+      border-radius: 5px;overflow-y: hidden;overflow-x: scroll;
+      border: 0.5px solid rgba(100, 100, 100, 0.5);
     }
     .hvnum3 {
       width: 1000px;height: 37px;display: block;
@@ -279,6 +274,28 @@
         transform: translateX(-100%);
       }
     }
+    .Context-Menu {
+      width: 140px;height: 65px;background: rgba(200, 200, 200, 0.7);
+      border: 0.5px solid rgba(60, 60, 60, 0.7);border-radius: 10px;overflow: hidden;
+      position: absolute;z-index: 20;margin: 0px
+    }
+    .inerholder {
+      width: 100%;height: 100%; display: inline-grid;
+       align-items: center; justify-content: center;
+    }
+    .inerholder hr {
+      width: 100%;height: 1px; background: rgba(60, 60, 60, 0.7);margin: 0px;
+    }
+    .inerholder input {
+      width: 100%;height: 95%; background: rgba(200,200,200,0.1);
+      border: rgba(60, 60, 60, 0.7);
+    }
+    .inerholder input:hover {
+      width: 100%;height: 90%; background: rgba(240,240,240,0.85);
+      border-radius: 5px;
+    }
+
+    body {margin: 0px;padding: 0px;vertical-align: middle;align-items: center;}
     </style>
 </head>
 <body>
