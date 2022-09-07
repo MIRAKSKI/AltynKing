@@ -21,6 +21,7 @@ body {
 .search-holder {
   width: 15rem;height:3rem;position: absolute;bottom: 0;right: 0;margin: 0px;display: inline;
 }
+a {text-decoration: none;}
 .search-holder input {
   width: 92%;height:75%;position: absolute;margin: 0px;top: 0;left: 0;
   border-radius: 0.3125rem;border: 0.0625rem solid rgba(100,100,100,0.4);
@@ -176,7 +177,7 @@ body {
 }
 .show-p1 p {
   margin: 0;position: absolute;bottom: 0.125rem;left: 0.3125rem;font-size: 1.25rem;font-weight: bold;
-  color: white;
+  color: white;text-decoration: none;
 }
 .show-p1 .imgpreshow {
   width: 100%; height: 100%;align-items: center;align-content: center;
@@ -195,7 +196,7 @@ body {
 }
 .show-p2 p {
   margin: 0;position: absolute;bottom: 0.125rem;left: 0.3125rem;font-size: 1.25rem;font-weight: bold;
-  color: white;
+  color: white;text-decoration: none;
 }
 .show-p2 .imgpreshow {
   width: 100%; height: 100%;align-items: center;align-content: center;
@@ -210,7 +211,7 @@ body {
 }
 .show-p3 p {
   margin: 0;position: absolute;bottom: 0.125rem;left: 0.3125rem;font-size: 1.25rem;font-weight: bold;position: relative;
-  color: white;
+  color: white;text-decoration: none;
 }
 .show-p3 .imgpreshow {
   width: 100%; height: 100%;align-items: center;align-content: center;
@@ -225,7 +226,7 @@ body {
 }
 .show-p22 p {
   margin: 0;position: absolute;bottom: 0.4375rem;left: 0.3125rem;font-size: 1.25rem;font-weight: bold;
-  color: white;
+  color: white;text-decoration: none;
 }
 
 .show-title {
@@ -235,11 +236,12 @@ body {
 .show-title p {
   border: none;background-color: rgba(60, 60, 255, 1);
   color: white;font-size: 1.125rem;display: inline;
-  padding: 0.125rem 0.3125rem;
+  padding: 0.125rem 0.3125rem;text-decoration: none;
 }
 
 .show-action {
   width: 100%;height: 100%;position: relative;margin: 0;display: flex;
+  text-decoration: none;
 }
 
 .con-show-action {
@@ -274,6 +276,7 @@ body {
 }
 .text-provider p {
   width: 100%; margin: 0.125rem; height: 100%;color: black;font-weight: bolder;
+  text-decoration: none;
 }
 
 .imag-provider {
@@ -284,6 +287,7 @@ body {
 }
 .text-pro-vider p {
   width: 100%; margin: 0.125rem; height: 100%;color: black;font-weight: bolder;
+  text-decoration: none;
 }
 
 
@@ -292,12 +296,15 @@ body {
 }
 .con-text-pro-vider p {
   width: 100%; margin: 0.125rem; height: 100%;color: black;font-weight: bolder;
+  text-decoration: none;
 }
 .Abo-text-pro-vider p:first-child {
   width: 100%; margin: 0.125rem;color: black;font-weight: bolder;font-size: 2.5rem;
+  text-decoration: none;
 }
 .Abo-text-pro-vider p:last-child {
   width: 100%; margin: 0.125rem; height: 100%;color: black;
+  text-decoration: none;
 }
 
 .list-cont-act {
@@ -452,17 +459,17 @@ body {
   background-repeat: no-repeat;
   background-size: cover;}
 #img01 {
-  background-image: url('img/5.jpg');
+  background-image: url('img/gh01.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;}
 #img02 {
-  background-image: url('img/5.jpg');
+  background-image: url('img/mg01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;}
 #img03 {
-  background-image: url('img/5.jpg');
+  background-image: url('img/gm01.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
