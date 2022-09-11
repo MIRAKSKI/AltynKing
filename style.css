@@ -384,115 +384,115 @@ a {text-decoration: none;}
 #img-p1-01 {
   background-image: url('img/mg01.png');
   background-position: center;height: 100%;width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;
 }
 #img-p1-02 {
   background-image: url('img/ukmo01.jpg');
   background-position: center;height: 100%;width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;}
 #img-p1-03 {
   background-image: url('img/gh01.jpg');
   background-position: center;height: 100%;width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;}
 #img-p1-04 {
   background-image: url('img/gm01.png');
   background-position: center;height: 100%;width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;}
 
 #Abo-img-p1-01 {
   background-image: url('img/mg01.png');
   background-position: center;height: 100%;width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;
 }
 #Abo-img-p1-02 {
   background-image: url('img/ukmo01.jpg');
   background-position: center;height: 100%;width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;
 }
 #Abo-img-p1-03 {
   background-image: url('img/gh01.jpg');
   background-position: center;height: 100%;width: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;cursor: pointer;
 }
 #Abo-img-p1-04 {
   background-image: url('img/gm01.png');
   background-position: center;height: 100%;width: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;cursor: pointer;
 }
 
 #Con-img-p1-01 {
   background-image: url('img/mg01.png');
   background-position: center;height: 100%;width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;
 }
 #Con-img-p1-02 {
   background-image: url('img/ukmo01.jpg');
   background-position: center;height: 100%;width: 100%;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;
 }
 #Con-img-p1-03 {
   background-image: url('img/gh01.jpg');
   background-position: center;height: 100%;width: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;cursor: pointer;
 }
 #Con-img-p1-04 {
   background-image: url('img/gm01.png');
   background-position: center;height: 100%;width: 100%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;cursor: pointer;
 }
 
 #img-01 {
   background-image: url('img/giga.png');
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;}
 #img01 {
   background-image: url('img/gh01.jpg');
-  background-position: center;
+  background-position: center;cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;}
 #img02 {
   background-image: url('img/mg01.png');
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;cursor: pointer;
   background-size: cover;}
 #img03 {
   background-image: url('img/gm01.png');
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover;cursor: pointer;
 }
 
-#img-02 {
+#img-22 {
   background-image: url('img/5.jpg');
   background-position: center;
+  background-repeat: no-repeat;cursor: pointer;
+  background-size: cover;}
+#img24 {
+  background-image: url('img/5.jpg');
+  background-position: center;cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;}
-#img04 {
+#img25 {
   background-image: url('img/5.jpg');
-  background-position: center;
+  background-position: center;cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;}
-#img05 {
+#img26 {
   background-image: url('img/5.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;}
-#img06 {
-  background-image: url('img/5.jpg');
-  background-position: center;
+  background-position: center;cursor: pointer;
   background-repeat: no-repeat;
   background-size: cover;
 }
