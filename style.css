@@ -159,7 +159,9 @@ a {text-decoration: none;}
 .con-show-content-2 {
   width: 100%;height: 25rem;margin: 0.625rem auto 0.625rem auto;position: relative;
 }
-
+.con-show-content-3 {
+  width: 100%;margin: 0.625rem auto 0.625rem auto;position: relative;
+}
 .show-content-5 {
   width: 100%;height: 23rem;margin: 0px;position: relative;display: flex;
 }
@@ -380,6 +382,31 @@ a {text-decoration: none;}
   left: 50%;transform: translate(-50%,0);
   transition: all 0.5s;
 }
+.casio-holder {
+  width: 100%;margin: auto;display: block;align-items: center;align-content: center;
+}
+.casio-holder label {color: rgba(60, 60, 60,.5);}
+.casio-holder input{
+  width: 97.5%;height: 2rem;border:none;border-bottom: 2px solid rgba(60, 60, 60,.08);
+  align-content: center;margin: 0.3rem 0;
+}
+.casio-holder textarea {
+  min-width: 100%;max-width: 100%;border:none;border-bottom: 2px solid rgba(60, 60, 60,.08);
+  height: 8rem;resize: none;
+}
+.casio-holder textarea:active {
+  border-bottom: 2px solid rgba(60, 60, 60,.4);
+}
+.casio-holder input:active {
+  border-bottom: 2px solid rgba(60, 60, 60,.4);
+}
+.casio-holder button{
+  width: 100%;height: 2rem;border: 2px solid rgb(150, 0, 150);border-radius: 0.3rem;text-align: center;
+  align-content: center;margin: 0.3rem 0;background: white;cursor: pointer;padding: 0 0.3rem;transition-duration: 0.2s;
+}
+.casio-holder button:hover{background: rgb(150, 0, 150);color: white;}
+.label-holder {width: 48%;}
+.label-holder label {color: black;}
 
 #img-p1-01 {
   background-image: url('img/mg01.png');
